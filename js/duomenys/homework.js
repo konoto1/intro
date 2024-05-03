@@ -197,6 +197,52 @@ console.log (false && true || false && true);
 console.log (true || false && true || false);
 console.log (false || true && false || true);
 
+console.clear();
 
+function compareBMI (){
+    const weightJohn = 92;
+    const heightJohn = 1.95;
+    const weightMark = 78;
+    const heightMark = 1.69;
+    const bmiJohn = weightJohn / heightJohn ** 2;
+    const bmiMark = weightMark / heightMark ** 2;
+    const markHigherBMI = bmiMark > bmiJohn;
+
+return "Mark has a higher BMI than John: " + "'" + markHigherBMI + "'";
+}
+console.log (compareBMI());
+
+console.clear();
+
+function compareBMI (wJ,hJ,wM,hM){
+    const weightJohn = wJ;
+    const heightJohn = hJ;
+    const weightMark = wM;
+    const heightMark = hM;
+    const bmiJohn = wJ / hJ ** 2;
+    const bmiMark = wM / hM ** 2;
+    const markHigherBMI = bmiMark > bmiJohn;
+
+return "Mark has a higher BMI than John: " + "'" + markHigherBMI + "'";
+}
+console.log (compareBMI(85, 1.76, 95, 1.88));
+
+console.clear();
+
+function compareBMI (wJ,hJ,wM,hM){
+    const weightJohn = wJ;
+    const heightJohn = hJ;
+    const weightMark = wM;
+    const heightMark = hM;
+    const bmiJohn = wJ / hJ ** 2;
+    const bmiMark = wM / hM ** 2;
+        if (bmiMark > bmiJohn){
+        return "Mark's BMI " + "(" + bmiMark.toFixed(1) + ")" + " is higher than John's" + "(" + bmiJohn.toFixed(1) + ")" + "!";
+        } else  {
+            return "John's BMI " + "(" + bmiJohn.toFixed(1) + ")" + " is higher than Mark's" + "(" + bmiMark.toFixed(1) + ")" + "!";
+        }
+}
+
+console.log (compareBMI(85, 1.76, 95, 1.88));
 
 

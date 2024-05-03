@@ -1,0 +1,18 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "Tomas tomas",
+  "main": "index.js",
+  "scripts": {
+    "homework": "node --watch ./js/duomenys/homework.js",
+    "function": "node --watch ./js/funkcijos/function.js",
+    "boolean": "node --watch ./js/duomenys/boolean.js",
+    "stringai":"node --watch ./js/duomenys/stringai.js",
+    "number": "node --watch ./js/duomenys/number.js",
+    "paisziaidimas": "node --watch pasizaidimas.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["vineas", "du", "trys"],
+  "author": "",
+  "license": "ISC"
+}

@@ -199,7 +199,7 @@ console.log (false || true && false || true);
 
 console.clear();
 
-function compareBMI (){
+function compareBMI1 (){
     const weightJohn = 92;
     const heightJohn = 1.95;
     const weightMark = 78;
@@ -210,11 +210,11 @@ function compareBMI (){
 
 return "Mark has a higher BMI than John: " + "'" + markHigherBMI + "'";
 }
-console.log (compareBMI());
+console.log (compareBMI1());
 
-console.clear();
 
-function compareBMI (wJ,hJ,wM,hM){
+
+function compareBMI2 (wJ,hJ,wM,hM){
     const weightJohn = wJ;
     const heightJohn = hJ;
     const weightMark = wM;
@@ -225,11 +225,11 @@ function compareBMI (wJ,hJ,wM,hM){
 
 return "Mark has a higher BMI than John: " + "'" + markHigherBMI + "'";
 }
-console.log (compareBMI(85, 1.76, 95, 1.88));
+console.log (compareBMI2(85, 1.76, 95, 1.88));
 
-console.clear();
 
-function compareBMI (wJ,hJ,wM,hM){
+
+function compareBMI3 (wJ,hJ,wM,hM){
     const weightJohn = wJ;
     const heightJohn = hJ;
     const weightMark = wM;
@@ -243,6 +243,6 @@ function compareBMI (wJ,hJ,wM,hM){
         }
 }
 
-console.log (compareBMI(85, 1.76, 95, 1.88));
+console.log (compareBMI3(85, 1.76, 95, 1.88));
 
 

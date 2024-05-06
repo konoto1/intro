@@ -245,4 +245,57 @@ function compareBMI3 (wJ,hJ,wM,hM){
 
 console.log (compareBMI3(92, 1.95, 78, 1.69));
 
+console.clear();
 
+
+// Namu darbas 
+// Kintamuju inicijavimas
+// Pirma uzduotis:
+
+const a = 1;
+console.log(a);
+
+const b = 2;
+console.log(b);
+
+const c = 3;
+console.log(c);
+
+//Antra uzduotis
+
+const name1 = "Tomas";
+console.log(name1);
+
+const name2 = "Jonas";
+console.log(name2); 
+
+const name3 = "Petras";
+console.log(name3); 
+
+// Trecia uzduotis
+
+const grade1 = [1, 2, 3, 4, 5];
+console.log(grade1);
+
+const grade2 = [10, 20, 30, 40, 50];
+console.log(grade2);
+
+const grade3 = [5, 10, 15, 20, 25];
+console.log(grade3);
+
+//Ketvirta uzduotis
+
+const text1 = ["Vienas", "Du", "Trys", "Keturi", "Penki"];
+console.log(text1);
+
+const text2 = ["Desimt", "Dvidesimt", "Trisdesimt", "Keturiasdesimt", "Penkiasdesimt"];
+console.log(text2);
+
+const text3 = ["Penki", "Desimt", "Penkiolika", "Dvidesimt", "Dvidesimt penki"];
+console.log(text3);
+
+// Veiksmai su kintamaisiais
+// Pirma uzduotis
+
+const sum = a + b + c;
+console.log(sum);

@@ -9,7 +9,7 @@ NUMBERS
 -    NaN (not-a-number)
 
 Matematiniai operatoriai:
--   aritmetiniai +, -, *, /, **, %, ** kelimas laipsniu, % liekana
+-   aritmetiniai +, -, *, /, **, %, **, ++, -- kelimas laipsniu, % liekana
 -   prisikirimo +=, -=, *=, =/, =**, =%, 
 */
 
@@ -84,3 +84,31 @@ console.log (y);
 
 y -= 10 + 5 * 4;
 console.log (y);
+
+
+let makaronai = 2;
+console.log (makaronai);
+
+makaronai = makaronai +2;
+console.log (makaronai);
+
+makaronai += 2;
+console.log (makaronai);
+
+makaronai += 1;
+console.log (makaronai);
+
+makaronai ++;
+console.log(makaronai);
+
+++makaronai;
+console.log(makaronai);
+
+console.clear();
+
+let g = 6;
+console.log(g);
+console.log(g++); // jei ++ uz kintamojo pradziai spausdina tada padidina
+console.log(++g); // jei ++ pries kintamaji pradziai padidina tada isspausdina
+console.log(g);
+

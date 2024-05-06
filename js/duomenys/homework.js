@@ -243,6 +243,6 @@ function compareBMI3 (wJ,hJ,wM,hM){
         }
 }
 
-console.log (compareBMI3(85, 1.76, 95, 1.88));
+console.log (compareBMI3(92, 1.95, 78, 1.69));
 
 

@@ -4,6 +4,7 @@
   "description": "Tomas tomas",
   "main": "index.js",
   "scripts": {
+    "for": "node --watch ./js/ciklai/for.js",
     "array": "node --watch ./js/duomenys/array.js",
     "if": "node --watch ./js/palyginimas/if.js",
     "homework": "node --watch ./js/duomenys/homework.js",

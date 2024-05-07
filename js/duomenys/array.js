@@ -20,6 +20,9 @@ const sum = mark1 + mark2 + mark3 + mark4 + mark5;
 const count = 5;
 const average1 = sum / count;
 */
+
+
+
 const sum2 = marks[0] + marks[1] + marks[2] + marks[3] + marks[4];
 const count2 = marks.length;
 const average2 = sum2 / count2;
@@ -59,4 +62,25 @@ sum4 += marks[index++];
 
 console.log(sum4);
 
+console.clear();
 
+
+
+function gradesAverage (grades){
+    if(grades.length === 0){
+    return "Vidurkis: nera pazymiu";
+    }
+    let sum = 0;
+    
+    
+        return "Vidurkis: " + (sum/grades.length);
+    
+}
+
+const grades = [];
+console.log (grades)
+console.log(gradesAverage(grades));
+
+grades.push(10);
+console.log (grades)
+console.log(gradesAverage(grades));

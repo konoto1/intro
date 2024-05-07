@@ -9,7 +9,7 @@ NUMBERS
 -    NaN (not-a-number)
 
 Matematiniai operatoriai:
--   aritmetiniai +, -, *, /, **, %, **, ++, -- kelimas laipsniu, % liekana
+-   aritmetiniai +, -, *, /, **, %, ++, --, (** kelimas laipsniu, % liekana, ++ prideti prie save viena, -- atimti is saves viena)
 -   prisikirimo +=, -=, *=, =/, =**, =%, 
 */
 

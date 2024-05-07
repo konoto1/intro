@@ -245,6 +245,23 @@ function compareBMI3 (wJ,hJ,wM,hM){
 
 console.log (compareBMI3(92, 1.95, 78, 1.69));
 
+console.clear();
+
+function compareBMI3 (wJ,hJ,wM,hM){
+    const weightJohn = wJ;
+    const heightJohn = hJ;
+    const weightMark = wM;
+    const heightMark = hM;
+    const bmiJohn = wJ / hJ ** 2;
+    const bmiMark = wM / hM ** 2;
+        if (bmiMark > bmiJohn){
+        return `Mark's BMI ${bmiMark.toFixed(1)} is higher than John's ${bmiJohn.toFixed(1)}!`;
+        } else  {
+            return `John's BMI ${bmiJohn.toFixed(1)} is higher than Mark's ${bmiMark.toFixed(1)}!`;
+        }
+}
+
+console.log (compareBMI3(92, 1.95, 78, 1.69));
 
 
 console.log("------Namu darbas-----");
@@ -284,7 +301,7 @@ console.log(grade3);
 
 console.log ("-------Ketvirta uzduotis------");
 
-const text1 = ["Vienas", "Du", "Trys", "Keturi", "Penki"];
+let text1 = ["Vienas", "Du", "Trys", "Keturi", "Penki"];
 console.log(text1);
 
 const text2 = ["Desimt", "Dvidesimt", "Trisdesimt", "Keturiasdesimt", "Penkiasdesimt"];
@@ -327,7 +344,14 @@ console.log (diffrenceGrade3);
 
 console.log ("------Ketvirta uzduotis-------");
 
- const sumText = text3[4] + ", " + text3[3] + ", " + text3[2] + ", " + text3[1] + ", " + text3[0] + ", " + text2[4] + ", " + text2[3] + ", " + text2[2] + ", " + text2[1] + ", " + text2[0] + ", " + text1[4] + ", " + text1[3] + ", " + text1[2] + ", " + text1[1] + ", " + text1[0];
+ //const sumText = text3[4] + ", " + text3[3] + ", " + text3[2] + ", " + text3[1] + ", " + text3[0] + ", " + text2[4] + ", " + text2[3] + ", " + text2[2] + ", " + text2[1] + ", " + text2[0] + ", " + text1[4] + ", " + text1[3] + ", " + text1[2] + ", " + text1[1] + ", " + text1[0];
+text1.reverse();
+text2.reverse();
+text3.reverse();
+
+const sumText1 = text3.join(", ") + ", " + text2.join(", ") + ", " + text1.join(", ")
+console.log(sumText1);
+
 
 
 console.log ("------Kintamuju palyginimas-----");
@@ -496,22 +520,8 @@ if (grade.length <= value.length){
     console.log("Bandykite kita kart.");
  }
 
-console.clear();
 
 
-function compareBMI3 (wJ,hJ,wM,hM){
-    const weightJohn = wJ;
-    const heightJohn = hJ;
-    const weightMark = wM;
-    const heightMark = hM;
-    const bmiJohn = wJ / hJ ** 2;
-    const bmiMark = wM / hM ** 2;
-        if (bmiMark > bmiJohn){
-        return `Mark's BMI ${bmiMark.toFixed(1)} is higher than John's ${bmiJohn.toFixed(1)}!`;
-        } else  {
-            return `John's BMI ${bmiJohn.toFixed(1)} is higher than Mark's ${bmiMark.toFixed(1)}!`;
-        }
-}
 
-console.log (compareBMI3(92, 1.95, 78, 1.69));
+
 

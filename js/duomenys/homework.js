@@ -248,9 +248,9 @@ console.log (compareBMI3(92, 1.95, 78, 1.69));
 console.clear();
 
 
-// Namu darbas 
-// Kintamuju inicijavimas
-// Pirma uzduotis:
+console.log("------Namu darbas-----");
+console.log("-----Kintamuju inicijavimas-----");
+console.log("------Pirma uzduotis------");
 
 const a = 1;
 console.log(a);
@@ -261,7 +261,7 @@ console.log(b);
 const c = 3;
 console.log(c);
 
-//Antra uzduotis
+console.log ("------Antra uzduotis-------");
 
 const name1 = "Tomas";
 console.log(name1);
@@ -272,7 +272,7 @@ console.log(name2);
 const name3 = "Petras";
 console.log(name3); 
 
-// Trecia uzduotis
+console.log ("-------Trecia uzduotis------");
 
 const grade1 = [1, 2, 3, 4, 5];
 console.log(grade1);
@@ -283,7 +283,7 @@ console.log(grade2);
 const grade3 = [5, 10, 15, 20, 25];
 console.log(grade3);
 
-//Ketvirta uzduotis
+console.log ("-------Ketvirta uzduotis------");
 
 const text1 = ["Vienas", "Du", "Trys", "Keturi", "Penki"];
 console.log(text1);
@@ -294,31 +294,47 @@ console.log(text2);
 const text3 = ["Penki", "Desimt", "Penkiolika", "Dvidesimt", "Dvidesimt penki"];
 console.log(text3);
 
-// Veiksmai su kintamaisiais
-// Pirma uzduotis
+console.log ("-------Veiksmai su kintamaisiais------");
+console.log ("------Pirma uzduotis------");
 
 const sum = a + b + c;
 console.log(sum);
 
-// Antra uzduotis
+console.log ("------Antra uzduotis------");
 
 const names = name1 + " " + name2 + " " + name3;
 console.log(names);
 
-// Trecia uzduotis
-//a
+console.log ("-------Trecia uzduotis------");
+console.log ("-----a-------");
 
-////????
+const sumEvenGrade1 = grade1[0] + grade1[2] + grade1[4];
+const sumOddGrade1 =  grade1[1] + grade1[3];
+const diffrenceGrade1 = sumEvenGrade1 - sumOddGrade1;
 
-// Ketvirta uzduotis
+const sumEvenGrade2 = grade2[0] + grade2[2] + grade2[4];
+const sumOddGrade2 =  grade2[1] + grade2[3];
+const diffrenceGrade2 = sumEvenGrade2 - sumOddGrade2;
+
+const sumEvenGrade3 = grade3[0] + grade3[2] + grade3[4];
+const sumOddGrade3 =  grade3[1] + grade3[3];
+const diffrenceGrade3 = sumEvenGrade3 - sumOddGrade3;
+
+console.log ("-------b-----");
+
+console.log (diffrenceGrade1);
+console.log (diffrenceGrade2);
+console.log (diffrenceGrade3);
+
+console.log ("------Ketvirta uzduotis-------");
 
  const sumText = text3[4] + ", " + text3[3] + ", " + text3[2] + ", " + text3[1] + ", " + text3[0] + ", " + text2[4] + ", " + text2[3] + ", " + text2[2] + ", " + text2[1] + ", " + text2[0] + ", " + text1[4] + ", " + text1[3] + ", " + text1[2] + ", " + text1[1] + ", " + text1[0];
 
 
- // Kintamuju palyginimas
- // Pirma uzduotis
+console.log ("------Kintamuju palyginimas-----");
+console.log ("------Pirma uzduotis-----");
 
- //a
+console.log ("-----a------");
 
  const x = 10;
  const y = 20;
@@ -329,7 +345,7 @@ console.log(names);
     console.log("Bandykite kita karta.");
   }
  
-//b
+  console.log ("----b------");
 
   if (x < y) {
  console.log("Pomidoras");
@@ -337,7 +353,7 @@ console.log(names);
     console.log("Bandykite kita karta.");
   }
  
-  //c
+  console.log ("----c------");
 
   if (x === y) {
  console.log("Pomidoras");
@@ -345,7 +361,7 @@ console.log(names);
     console.log("Bandykite kita karta.");
   }
  
- //d
+  console.log ("----d------");
 
   if (x !== y) {
  console.log("Pomidoras");
@@ -353,7 +369,7 @@ console.log(names);
     console.log("Bandykite kita karta.");
   }
   
-  //e
+  console.log ("----e------");
   
   if (x >= y) {
  console.log("Pomidoras");
@@ -361,7 +377,7 @@ console.log(names);
     console.log("Bandykite kita karta.");
   }
  
-//f
+  console.log ("----f------");
 
   if (x <= y) {
  console.log("Pomidoras");
@@ -369,17 +385,16 @@ console.log(names);
     console.log("Bandykite kita karta.");
   }
  
-// Antras uzdavinys
+console.log ("Antras uzdavinys");
 
 const d = "Vardas";
 const e = "Pavarde";
 
 console.log (d.length);
 console.log (e.length);
+console.log ("Trecias uzdavinys");
 
-// Trecias uzdavinys
-
-//a
+console.log ("----a------");
 
 if (d.length > e.length) {
     console.log ("Pomidoras");
@@ -387,7 +402,7 @@ if (d.length > e.length) {
     console.log("Bandykite kita karta.")
 }
 
-//b
+console.log ("----b------");
 
 if (d.length < e.length) {
     console.log ("Pomidoras");
@@ -395,7 +410,7 @@ if (d.length < e.length) {
     console.log("Bandykite kita karta.")
 }
 
-//c
+console.log ("----c------");
 
 if (d.length === e.length) {
     console.log ("Pomidoras");
@@ -403,15 +418,14 @@ if (d.length === e.length) {
     console.log("Bandykite kita karta.")
 }
 
-//d
+console.log ("----d------");
 
 if (d.length !== e.length) {
     console.log ("Pomidoras");
 }else {
     console.log("Bandykite kita karta.")
 }
-
-//e
+console.log ("----e------");
 
 if (d.length >= e.length) {
     console.log ("Pomidoras");
@@ -419,7 +433,7 @@ if (d.length >= e.length) {
     console.log("Bandykite kita karta.")
 }
 
-//f
+console.log ("----f------");
 
 if (d.length <= e.length) {
     console.log ("Pomidoras");
@@ -427,15 +441,15 @@ if (d.length <= e.length) {
     console.log("Bandykite kita karta.")
 }
 
-//Ketvirta uzduotis
+console.log ("Ketvirta uzduotis");
 
 const grade = [10, 8, 5, 10, 9];
 const value = [100, 52, 34, 95, 27];
  console.log (grade.length);
  console.log (value.length);
 
- //Penkta uzduotis
- //a
+console.log ("Penkta uzduotis");
+console.log ("----a------");
 
  if (grade.length > value.length){
     console.log("Pomidoras");
@@ -443,7 +457,7 @@ const value = [100, 52, 34, 95, 27];
     console.log("Bandykite kita kart.");
  }
 
- //b
+ console.log ("----b------");
 
  if (grade.length < value.length){
     console.log("Pomidoras");
@@ -451,7 +465,7 @@ const value = [100, 52, 34, 95, 27];
     console.log("Bandykite kita kart.");
  }
 
- //c
+ console.log ("----c------");
 
  if (grade.length === value.length){
     console.log("Pomidoras");
@@ -459,7 +473,7 @@ const value = [100, 52, 34, 95, 27];
     console.log("Bandykite kita kart.");
  }
 
- //d
+ console.log ("----d------");
 
  if (grade.length !== value.length){
     console.log("Pomidoras");
@@ -467,7 +481,7 @@ const value = [100, 52, 34, 95, 27];
     console.log("Bandykite kita kart.");
  }
 
- //e 
+ console.log ("----e------");
  
  if (grade.length >= value.length){
     console.log("Pomidoras");
@@ -475,10 +489,13 @@ const value = [100, 52, 34, 95, 27];
    console.log("Bandykite kita kart.");
 }
 
-//f
+console.log ("----f------");
 
 if (grade.length <= value.length){
     console.log("Pomidoras");
  } else {
     console.log("Bandykite kita kart.");
  }
+
+
+

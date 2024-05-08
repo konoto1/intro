@@ -6,6 +6,7 @@ console.log("----------a----------");
 
 
 
+
 let sum = 0;
 for (let i = 0; i <= 0; i++) {
     sum += i;
@@ -19,6 +20,9 @@ for (let i = 0; i <= 4; i++) {
     sum1 += i;
 }
 console.log(sum1);
+
+
+
 
 console.log("----------c----------");
 
@@ -55,10 +59,13 @@ console.log(sum5);
 console.log("---------Antra uzduotis--------");
 
 
+
+
 const text = "alus";
 let text1 = "";
 for (let i = 0; i < text.length; i++) {
     text1 += text[text.length - 1 - i];
+    //for (let i = 0; i < text.length; i++) {text1 += text[i] + text1;
 }
 console.log(text1);
 
@@ -138,20 +145,22 @@ const d = [574, 815];
 const e = [-50, 50];
 const f = [-70, 30];
 
-function suma(marks) {
-    let sum = 0;
+function suma1(marks) {
+    let sum5 = 0;
     for (let i = marks[0]; i <= marks[1]; i++) {
-        sum += i;
+        sum5 += i;
     }
-    return sum;
+    return sum5;
 }
 
-console.log(suma(a));
-console.log(suma(b));
-console.log(suma(c));
-console.log(suma(d));
-console.log(suma(e));
-console.log(suma(f));
+console.log(suma1(a));
+console.log(suma1(b));
+console.log(suma1(c));
+console.log(suma1(d));
+console.log(suma1(e));
+console.log(suma1(f));
+
+
 
 console.log("----------Trecia uzduotis-----------");
 
@@ -183,4 +192,47 @@ console.log(number(a1) + "\n----------");
 console.log(number(b1) + "\n----------");
 console.log(number(c1));
 
+
+
+console.log("-------dar vienas variantas-----\n-------Pirma uzduotis-----");
+
+
+function suma(start, finish) {
+    let sum = 0;
+    for (let i = start; i <= finish; i++) {
+        sum += i;
+    }
+    return sum;
+}
+console.log(suma(0, 0));
+console.log(suma(0, 4));
+console.log(suma(0, 100));
+console.log(suma(574, 815));
+console.log(suma(-50, 50));
+console.log(suma(-70, 30));
+
+
+console.log("----------Trecia uzduotis----------");
+
+function numberCount(start, finish, step) {
+    let answer = 0;
+    for (let i = start; i <= finish; i++) {
+        if (i % step === 0) {
+            answer++;
+        }
+    }
+    return "Skaičių intervale tarp " + start + " ir " + finish + ", besidalijančių be liekanos iš " + step + " yra " + answer + " vienetai.";
+}
+
+console.log(numberCount(0, 11, 3));
+console.log(numberCount(0, 11, 5));
+console.log(numberCount(0, 11, 7));
+
+console.log(numberCount(8, 31, 3));
+console.log(numberCount(8, 31, 5));
+console.log(numberCount(8, 31, 7));
+
+console.log(numberCount(-18, 18, 3));
+console.log(numberCount(-18, 18, 5));
+console.log(numberCount(-18, 18, 7));
 

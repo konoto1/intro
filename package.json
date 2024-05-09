@@ -4,6 +4,7 @@
   "description": "Tomas tomas",
   "main": "index.js",
   "scripts": {
+    "typeof": "node --watch ./js/duomenys/typeof.js",
     "nd": "node --watch ./js/homework_mentorius/nd.js",
     "homework_function": "node --watch ./js/funkcijos/homework_function.js",
     "homework_for": "node --watch ./js/ciklai/homework_for.js",
@@ -15,7 +16,7 @@
     "boolean": "node --watch ./js/duomenys/boolean.js",
     "stringai":"node --watch ./js/duomenys/stringai.js",
     "number": "node --watch ./js/duomenys/number.js",
-    "paisziaidimas": "node --watch pasizaidimas.js",
+    "pasizaidimas": "node --watch pasizaidimas.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["vineas", "du", "trys"],

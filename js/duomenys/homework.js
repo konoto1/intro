@@ -349,9 +349,9 @@ console.clear();
 const sumText3 = text3[4] + ", " + text3[3] + ", " + text3[2] + ", " + text3[1] + ", " + text3[0];
 const sumText2 = text2[4] + ", " + text2[3] + ", " + text2[2] + ", " + text2[1] + ", " + text2[0];
 const sumText1 = text1[4] + ", " + text1[3] + ", " + text1[2] + ", " + text1[1] + ", " + text1[0];
-//xt1.reverse();
-//xt2.reverse();
-//xt3.reverse();
+//txt1.reverse();
+//txt2.reverse();
+//txt3.reverse();
 //
 //nst sumText1 = text3.join(", ") + ", " + text2.join(", ") + ", " + text1.join(", ")
 console.log(sumText3);

@@ -5,7 +5,7 @@ Multi
 line
 comment
 */
-
+//typeof(....) - pasiziureti kokio tipo rezultatas pvz string, number etc.
 
 // CTRL + S = issaugoti faila
 // CTRL + A = pasirinkti visa teksta

@@ -13,12 +13,22 @@ console.log(myName);
 console.log(typeof myName);
 console.log("Tomas");
 
-const zeroFuel = (distanceToPump, mpg, fuelLeft);
-function answer(zeroFuel) {
-    if (distanceToPump - (mpg * fuelLeft) >= 0) {
+
+function answer(distanceToPump, mpg, fuelLeft) {
+    if (typeof distanceToPump !== "number") {
+        return "Input must be a number";
     }
-    return answer;
+    if (typeof mpg !== "number") {
+        return "Input must be a number";
+    }
+    if (typeof fuelLeft !== "number") {
+        return "Input must be a number";
+    }
+    if (distanceToPump - (mpg * fuelLeft) <= 0) {
+        return true;
+    }
+    return false;
 }
 
 
-console.log(zeroFuel(50, 25, 1));
+console.log(answer(50, 10, 3));

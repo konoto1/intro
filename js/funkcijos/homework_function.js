@@ -194,7 +194,7 @@ console.log("Testas7   >>>  " + dalyba(NaN, null));
 console.log("Testas8   >>>  " + dalyba([5], null));
 console.log("Testas9   >>>  " + dalyba(-10, 2));
 console.log("Testas10  >>>  " + dalyba(0, -10));
-console.log("Testas11  >>>  " + dalyba(blabla, -10));
+
 
 
 

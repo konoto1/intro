@@ -69,11 +69,14 @@ console.log("\n---------------Ketvirta uzduotis------------\n");
 
 function didziausiasSkaiciusSarase(n) {
     if (Array.isArray(n) !== true) {
-        console.log(Array.isArray(n));
         return "Pateikta netinkamo tipo reikšmė.";
     }
     if (n.length === 0) {
         return "Pateiktas sąrašas negali būti tuščias.";
+    }
+    for (let i = 0; i < n.length; i++) {
+        if (typeof (n[i]) === "string")
+            return "Pateikto sąrašo reikšmės turi būti skaičiai.";
     }
 
     let hV = n[0];
@@ -88,28 +91,110 @@ function didziausiasSkaiciusSarase(n) {
 
 
 
-
-//Funkcija pavadinimu “didziausiasSkaiciusSarase”:
-//priima vieną kintamąjį
-//jei perduotas kintamasis nėra sąrašo tipo, tai išveda pranešimą “Pateikta netinkamo tipo reikšmė.”
-//jei sąrašas yra tuščias, tai išveda pranešimą “Pateiktas sąrašas negali būti tuščias.”
-//priešingu atveju, funkcija tęsia darbą
-//pereina per visą pateiktą sąrašą ir į atskirą kintamąjį įsimena skaičių, kuris tuo metu yra didžiausias
-//gražina didžiausią surastą skaičių
-//TESTAI:
 console.log(didziausiasSkaiciusSarase([1]));
-//rezultatas: 1
 console.log(didziausiasSkaiciusSarase([1, 2, 3]));
-//rezultatas: 3
+console.log(didziausiasSkaiciusSarase([-1, -2, -3]));
 console.log(didziausiasSkaiciusSarase([-5, 78, 14, 0, 18]));
-//rezultatas: 78
 console.log(didziausiasSkaiciusSarase([69, 69, 69, 69, 66]));
-//rezultatas: 69
 console.log(didziausiasSkaiciusSarase([-1, -2, -3, -4, -5, -6, -7, -8]));
-//rezultatas: -1
 console.log(didziausiasSkaiciusSarase("pomidoras"));
-//rezultatas: “Pateikta netinkamo tipo reikšmė.”
 console.log(didziausiasSkaiciusSarase([]));
-//rezultatas: “Pateiktas sąrašas negali būti tuščias.”
-console.log(didziausiasSkaiciusSarase(["a", "b", "ea", "eb"]));
+console.log(didziausiasSkaiciusSarase(["a", "bb", "ea", "eb"]));
+
+
+console.log("\n--------------Penkta uzduotis-----------------\n");
+
+
+
+function isrinktiRaides(text, step) {
+    if (typeof (text) !== "string") {
+        return "Pirmasis kintamasis yra netinkamo tipo.";
+    }
+    if (0 === text.length > 100) {
+        return "Pirmojo kintamojo reikšmė yra netinkamo dydžio.";
+    }
+    if (typeof (step) !== "number") {
+        return "Antrasis kintamasis yra netinkamo tipo.";
+    }
+    if ("" + step === "NaN") {
+        return "Antrasis kintamasis negali būti NaN.";
+    }
+    for (let i = 0; i < ("" + step).length; i++) {
+        if (("" + step)[i] === ".")
+            return "Antrasis kintamasis turi būti sveikasis skaičius.";
+    }
+    if (step <= 0) {
+        return "Antrasis kintamasis turi būti didesnis už nulį.";
+    }
+    if (step > text.length) {
+        return "Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.";
+    }
+    let newText = "";
+    for (let i = step - 1; i < text.length; i += step) {
+        newText += text[i];
+    }
+    return newText;
+}
+
+
+console.log(isrinktiRaides("abcdefg", 2));
+console.log(isrinktiRaides("abcdefghijkl", 3));
+console.log(isrinktiRaides("abc", 0));
+console.log(isrinktiRaides("abc", 4));
+console.log(isrinktiRaides(1561, 2));
+console.log(isrinktiRaides("aasasasas", NaN));
+console.log(isrinktiRaides("aasasasas", 1.5));
+console.log(isrinktiRaides("aasasasas", undefined));
+
+
+console.log("\n--------------Sesta uzduotis------------\n");
+
+
+function dalyba(n1, n2) {
+    if (typeof (n1) !== "number") {
+        return "Pirmasis kintamasis privalo būti skaičius";
+    }
+    if (typeof (n2) !== "number") {
+        return "Antrasis kintamasis privalo būti skaičius";
+    }
+    if ("" + n1 === "NaN") {
+        return "Pirmasis kintamasis negali būti NaN";
+    }
+    if ("" + n2 === "NaN") {
+        return "Antrasis kintamasis negali būti NaN";
+    }
+    if ("" + n1 === "Infinity") {
+        return "Pirmasis kintamasis negali būti Infinity";
+    }
+    if ("" + n2 === "Infinity") {
+        return "Antrasis kintamasis negali būti Infinity";
+    }
+    if ("" + n1 === "-Infinity") {
+        return "Pirmasis kintamasis negali būti Infinity";
+    }
+    if ("" + n2 === "-Infinity") {
+        return "Antrasis kintamasis negali būti -Infinity";
+    }
+    //if (n2 === 0) {
+    //    return "Dalyba iš nulio negalima";
+    //}
+    let answer = n1 / n2;
+    return answer;
+
+}
+
+
+console.log("Testas1   >>>  " + dalyba("a", 2));
+console.log("Testas2   >>>  " + dalyba(2, "2"));
+console.log("Testas3   >>>  " + dalyba(2, 0));         //?????
+console.log("Testas4   >>>  " + dalyba(2, -Infinity));
+console.log("Testas5   >>>  " + dalyba(2, undefined));
+console.log("Testas6   >>>  " + dalyba(2, NaN));
+console.log("Testas7   >>>  " + dalyba(NaN, null));
+console.log("Testas8   >>>  " + dalyba([5], null));
+console.log("Testas9   >>>  " + dalyba(-10, 2));
+console.log("Testas10  >>>  " + dalyba(0, -10));
+console.log("Testas11  >>>  " + dalyba(blabla, -10));
+
+
 

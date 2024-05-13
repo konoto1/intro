@@ -52,8 +52,21 @@ function skaitmenuKiekisSkaiciuje(skaicius) {
     if ("" + skaicius === "-Infinity") {
         return ("Pateikta netinkamo tipo reikšmė.");
     }
+    if (skaicius % 1 !== 0 && skaicius < 0) {
+        return ("" + skaicius).length - 2;
+    }
+    if (skaicius % 1 !== 0) {
+        return ("" + skaicius).length - 1;
+    }
+    if (skaicius < 0) {
+        return ("" + skaicius).length - 1;
+    }
     const skaiciusAsText = ("" + skaicius).length;
     return skaiciusAsText;
+    // if (isFinite(skaicius) === false)) {
+    //    return baigtine reiksme}
+
+
 }
 
 console.log(skaitmenuKiekisSkaiciuje(5));
@@ -62,6 +75,7 @@ console.log(skaitmenuKiekisSkaiciuje(37060123456));
 console.log(skaitmenuKiekisSkaiciuje(true));
 console.log(skaitmenuKiekisSkaiciuje("asd"));
 console.log(skaitmenuKiekisSkaiciuje(NaN));
+console.log(skaitmenuKiekisSkaiciuje(-3.1415));
 
 
 console.log("\n---------------Ketvirta uzduotis------------\n");
@@ -75,8 +89,9 @@ function didziausiasSkaiciusSarase(n) {
         return "Pateiktas sąrašas negali būti tuščias.";
     }
     for (let i = 0; i < n.length; i++) {
-        if (typeof (n[i]) === "string")
+        if (typeof (n[i]) === "string") {
             return "Pateikto sąrašo reikšmės turi būti skaičiai.";
+        }
     }
 
     let hV = n[0];
@@ -120,8 +135,9 @@ function isrinktiRaides(text, step) {
         return "Antrasis kintamasis negali būti NaN.";
     }
     for (let i = 0; i < ("" + step).length; i++) {
-        if (("" + step)[i] === ".")
+        if (("" + step)[i] === ".") {
             return "Antrasis kintamasis turi būti sveikasis skaičius.";
+        }
     }
     if (step <= 0) {
         return "Antrasis kintamasis turi būti didesnis už nulį.";

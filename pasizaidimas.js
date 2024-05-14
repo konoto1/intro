@@ -282,6 +282,8 @@ console.log(correctPolishLetters("Wałęsa"));
 console.log(correctPolishLetters("Jędrzęj Błądziński"));
 console.log(correctPolishLetters("Lech Wałęsa"));
 console.log(correctPolishLetters("Maria Skłodowska-Curie"));
+
+console.clear();
 // ą -> a,
 // ć -> c,
 // ę -> e,
@@ -293,30 +295,88 @@ console.log(correctPolishLetters("Maria Skłodowska-Curie"));
 // ż -> z
 
 
-// function correctPolishLetters1(string) {
-//     const polisAbc = "ąćęłńóśźż";
-//     const normalAbc = "acelnoszz";
-//     for (let i = 0; i < string.length; i++) {
-//         const letter = string[i];
+function correctPolishLetters1(string) {
+    let result = '';
+    const polishAbc = "ąćęłńóśźż";
+    const normalAbc = "acelnoszz";
+    for (let i = 0; i < string.length; i++) {
+        const letter = string[i];
+        //kur sedi ę polishAbc index 2
+        //kur sedi normalAbc e index 2
+        let index = -1;
+        for (let j = 0; j < polishAbc.length; j++) {
+            const polishletter = polishAbc[j];
+            if (polishletter === letter) {
+                result += normalAbc[j];
+                index = j;
+            }
+        }
+        if (index === -1) {
+            result += letter;
+        }
+    }
+    return result;
+}
 
-//         //kur sedi ę polishAbc index 2
-//         //kur sedi normalAbc e index 2
-//         let index = -1;
-//         for (let j = 0; j < polisAbc.length; j++) {
-//             const polishletter = polisAbc[j];
-//             if (polishletter === letter) {
-//                 result += normalAbc[j];
-//                 index = j;
-//             }
-//         }
-//         if (index === -1) {
-//             result += letter;
-//         }
-//     }
-//     return result;
-// }
+console.log(correctPolishLetters1("Wałęsa"));
+console.log(correctPolishLetters1("Jędrzęj Błądziński"));
+console.log(correctPolishLetters1("Lech Wałęsa"));
+console.log(correctPolishLetters1("Maria Skłodowska-Curie"));
 
-// console.log(correctPolishLetters1("Wałęsa"));
-// console.log(correctPolishLetters1("Jędrzęj Błądziński"));
-// console.log(correctPolishLetters1("Lech Wałęsa"));
-// console.log(correctPolishLetters1("Maria Skłodowska-Curie"));
+
+console.clear();
+
+function getDrinkByProfession(param) {
+    if (param.toLowerCase() === 'jabroni') {
+        return 'Patron Tequila';
+    } else if (param.toLowerCase() === 'school counselor') {
+        return 'Anything with Alcohol';
+    } else if (param.toLowerCase() === 'programmer') {
+        return 'Hipster Craft Beer';
+    } else if (param.toLowerCase() === 'bike gang member') {
+        return 'Moonshine';
+    } else if (param.toLowerCase() === 'politician') {
+        return 'Your tax dollars';
+    } else if (param.toLowerCase() === 'rapper') {
+        return 'Cristal';
+    } else {
+        return 'Beer';
+    }
+}
+
+
+console.log(getDrinkByProfession("jabrOni"));
+console.log(getDrinkByProfession("scHOOl counselor"));
+console.log(getDrinkByProfession("prOgramMer"));
+console.log(getDrinkByProfession("bike ganG member"));
+console.log(getDrinkByProfession("poLiTiCian"));
+console.log(getDrinkByProfession("rapper"));
+console.log(getDrinkByProfession("pundit"));
+console.log(getDrinkByProfession("Pug"));
+
+console.clear();
+
+function century(year) {
+    const cent = year / 100;
+    if (year < 1) {
+        return "wrong input";
+        console.log("1---");
+    }
+    if (cent <= 1) {
+        return 1;
+        console.log('2----');
+    }
+    if (cent % 1 === 0) {
+        return parseInt(cent);
+    } else {
+        return parseInt(cent) + 1;
+    }
+}
+
+console.log(century(1705)); //18, 'Testing for year 1705');
+console.log(century(1900)); //19, 'Testing for year 1900');
+console.log(century(1601)); //17, 'Testing for year 1601');
+console.log(century(2000));// 20, 'Testing for year 2000');
+console.log(century(89));// 1, 'Testing for year 89');
+console.log(century(101));// 1, 'Testing for year 89');
+

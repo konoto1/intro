@@ -4,6 +4,7 @@ FUNCTION - funkcija, perpanaudojima logika
 {} - logikos blokas
 
 input => Function() => Output
+"" + funkcija = isspausdina pacia funkcija
 */
 
 function funkcijosPavadinimas() {

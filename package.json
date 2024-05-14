@@ -4,6 +4,7 @@
   "description": "Tomas tomas",
   "main": "index.js",
   "scripts": {
+    "method:string": "node --watch ./js/metodai/string.js",
     "method:number": "node --watch ./js/metodai/number.js",
     "typeof": "node --watch ./js/duomenys/typeof.js",
     "nd": "node --watch ./js/homework_mentorius/nd.js",

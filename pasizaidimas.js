@@ -143,3 +143,15 @@ function differenceInAges(ages) {
 console.log(differenceInAges([82, 15, 6, 38, 35]), [6, 82, 76]);
 console.log(differenceInAges([57, 99, 14, 32]), [14, 99, 85]);
 
+
+
+
+function past(h, m, s) {
+    let ms = (h * 3600 + m * 60 + s) * 100;
+    if (0 >= h >= 23 && 0 >= m >= 59 && 0 >= s >= 59) {
+        return "wrong input";
+    }
+    return ms;
+}
+
+console.log(past(0, 1, 1));

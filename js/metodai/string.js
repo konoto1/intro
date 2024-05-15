@@ -121,6 +121,13 @@ console.log('split()');
 console.log('Pomidoras'.split('o'));
 console.log('Pomidoras'.split('o', 2));
 console.log('Pomidoras'.split('o', 1));
+console.log('Labas rytas, Lietuva!'.split(' '));
+console.log('Labas rytas, Lietuva!'.split('L'));
+console.log('Labaaas raaytaaaas, Laaaietuva!'.split('a'));
+console.log('Pomidoras'.split(''));
+console.log(''.split(''));
+console.log(''.split('asasas'));
+
 
 console.log('-----------');
 console.log('toLowerCase()');
@@ -144,7 +151,8 @@ console.log('-----------');
 console.log('trim()');
 
 console.log('Pomidoras'.trim());
-console.log('       Po mid oras. '.trim());
+console.log('"' + 'Po mid oras. ' + '"'.trim());
+console.log('"' + 'Po mid oras. '.trim() + '"');
 console.log('       Po mid oras        .'.trim());
 console.log('.      Po mid oras        '.trim());
 console.log(('.      Po mid oras        '.trim()).length);
@@ -174,3 +182,11 @@ console.log('Pomidoras         '.trimStart());
 console.log(('Pomidoras         '.trimStart()).length);
 console.log('      Pomidoras         '.trimStart());
 console.log(('      Pomidoras         '.trimStart()).length);
+
+console.clear();
+
+const text = 'Labas rytas, lietuva!';
+
+//const dictionary = ['Labas', 'rytas', 'Lietuva'];
+const dictionary = text.replace(',', '').replace('!', '').split(' ');
+console.log(dictionary);

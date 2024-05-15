@@ -39,6 +39,13 @@ Duomenu tipai:
 */
 
 /*
+Duomenu iniciavimo budai:
+- const ((default) naudoti kai tik imanoma, kad netycia eigoje nepasikeistu nenorint)
+- let (kai turi intencija reiksme keisti)
+- var (seniena kurio reiketu nenaudoti, nebent zinai ka darai)
+*/
+
+/*
 Git konfiguravimaskaip patikrinti, kokiu vardu prisiregistruota:
 git config --global user.name
 kaip patikrinti, kokiu email prisiregistruota:

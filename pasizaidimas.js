@@ -514,3 +514,158 @@ console.log(findDifference([15, 20, 25], [10, 30, 25]));    // 0);
 
 console.clear();
 
+console.log('-------Calculate BMI--------');
+
+
+function bmi(weight, height) {
+    const bmi = weight / (height ** 2);
+    console.log(bmi);
+    if (bmi <= 18.5) {
+        return 'Underweight';
+    }
+    if (18.5 < bmi && bmi <= 25.0) {
+        return 'Normal';
+    }
+    if (25.0 < bmi && bmi <= 30) {
+        return 'Overweight';
+    }
+    if (30 < bmi) {
+        return 'Obese';
+    }
+    return "wrong input";
+}
+
+console.log(bmi(80, 1.80));         //"Normal"
+
+console.clear();
+
+console.log('----------Switch it Up!-----------');
+
+
+function switchItUp(number) {
+    const word = ('' + number)
+        .replaceAll('0', 'Zero')
+        .replaceAll('1', 'One')
+        .replaceAll('2', 'Two')
+        .replaceAll('3', 'Three')
+        .replaceAll('4', 'Four')
+        .replaceAll('5', 'Five')
+        .replaceAll('6', 'Six')
+        .replaceAll('7', 'Seven')
+        .replaceAll('8', 'Eight')
+        .replaceAll('9', 'Nine')
+    return word;
+}
+
+
+console.log(switchItUp(1));         // "One"
+console.log(switchItUp(3));         // "Three"
+console.log(switchItUp(5));         // "Five"
+
+console.clear();
+
+console.log('---------Simple Multiplications------');
+
+
+function simpleMultiplication(number) {
+    const isEven = number % 2;
+    if (isEven === 0) {
+        return number * 8;
+    }
+    return number * 9;
+}
+
+console.log(simpleMultiplication(2));           // 16, 'Should return given argument times eight...')
+console.log(simpleMultiplication(1));           // 9, 'Should return given argument times nine...')
+console.log(simpleMultiplication(8));           // 64, 'Should return given argument times eight...')
+console.log(simpleMultiplication(4));           // 32, 'Should return given argument times eight...')
+console.log(simpleMultiplication(5));           // 45, 'Should return given argument times nine...')
+
+console.clear();
+console.log('------Super Duper Easy-----');
+
+function problem(x) {
+    const result = x * 50 + 6;
+    if (typeof (x) !== 'number') {
+        return 'Error';
+    }
+    return result;
+}
+
+console.log(problem("hello"));        // "Error");
+console.log(problem(1));              //  56);
+console.log(problem(5));              //  256);
+console.log(problem(0));              //  6);
+console.log(problem(1.2));            //  66);
+console.log(problem(3));              //  156);
+console.log(problem("RyanIsCool"));   //  "Error");
+console.log(problem(-3));             //  -144);
+console.log(problem(""));             //  "Error");
+console.log(problem(0.03));           //  7.5);
+
+console.clear();
+
+console.log('--------Exclusive "or" (xor) Logical Operator---------');
+
+function xor(a, b) {
+    if ('' + a !== 'true' && '' + b !== 'true') {
+        return false;
+    } else if ('' + a === 'true' && '' + b === 'true') {
+        return false;
+    }
+    return true;
+}
+
+
+console.log(xor(false, false));         // false, "false xor false");
+console.log(xor(true, false));          // true, "true xor false");
+console.log(xor(false, true));          // true, "false xor true");
+console.log(xor(true, true));           // false, "true xor true");
+console.log(xor(true, true));           // true, "true xor true: 'xor' is NOT identical to 'or'");
+
+console.clear();
+
+console.log('---------Capitalization and Mutability----------');
+
+function capitalizeWord(word) {
+    const upperLetter = word[0].toUpperCase();
+    const newWord = upperLetter + word.slice(1);
+    return newWord;
+}
+
+
+console.log(capitalizeWord('word'));            // 'Word');
+console.log(capitalizeWord('i'));               // 'I');
+console.log(capitalizeWord('glasswear'));       // 'Glasswear');
+
+console.clear();
+console.log('----------Contamination #1 -String------')
+
+function contamination(text, char) {
+    const newText = '' + char.repeat(text.length)
+    return newText;
+}
+
+
+console.log(contamination("abc", "z"));          // "zzz")
+console.log(contamination("", "z"));             // "")
+console.log(contamination("abc", ""));           // "")
+console.log(contamination("_3ebzgh4", "&"));     // "&&&&&&&&")
+console.log(contamination("//case", " "));       // "      ")
+
+console.clear();
+console.log('----------Find the position!------')
+
+
+function position(letter) {
+    const abc = '.abcdefghijklmnopqrstuvwxyz';
+    return 'Position of alphabet: ' + abc.indexOf(letter);
+}
+
+console.log(position("a"));     //"Position of alphabet: 1");
+console.log(position("z"));     //"Position of alphabet: 26");
+console.log(position("e"));     //"Position of alphabet: 5");
+
+
+console.clear();
+console.log('----------Find the position!------')

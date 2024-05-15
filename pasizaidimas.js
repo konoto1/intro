@@ -380,3 +380,137 @@ console.log(century(2000));// 20, 'Testing for year 2000');
 console.log(century(89));// 1, 'Testing for year 89');
 console.log(century(101));// 1, 'Testing for year 89');
 
+console.clear();
+
+
+function countSheeps(sheep) {
+    let count = 0;
+    for (let i = 0; i < sheep.length; i++) {
+        if ('' + sheep[i] === 'true') {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+
+console.log(countSheeps([]));
+console.log(countSheeps([undefined]));
+console.log(countSheeps([null]));
+console.log(countSheeps([true]));
+console.log(countSheeps([undefined, null, false, true]));
+console.log(countSheeps([undefined, null, false, true, true, false, null, undefined]));
+console.log(countSheeps([undefined, null, false, true, true, false, null, undefined]));
+console.log(countSheeps([true, true, true, false, true, true, true, true, true, false, true, false, true, false, false, true, true, true, true, true, false, false, true, true]));
+
+console.clear();
+console.log('------Will there  be enough space------');
+
+
+function enough(cap, on, wait) {
+    const space = cap - on - wait;
+    if (space >= 0) {
+        return 0;
+    }
+    return -1 * space;
+}
+
+
+console.log(enough(10, 5, 5));        //0);
+console.log(enough(100, 60, 50));     //10);
+console.log(enough(20, 5, 5));        //0);
+
+
+console.clear();
+console.log('-----Calculate number of magazines------');
+
+function magNumber(info) {
+    const bullets = 3 * info[1];
+    if (info[0] === 'PT92' && bullets % 17 !== 0) {
+        return parseInt(bullets / 17) + 1;
+    } else if (info[0] === 'PT92') {
+        return bullets / 17;
+    }
+    if (info[0] === 'M4A1' && bullets % 30 !== 0 || info[0] === 'M16A2' && bullets % 30 !== 0) {
+        return parseInt(bullets / 30) + 1;
+    } else if (info[0] === 'M4A1' || info[0] === 'M16A2') {
+        return bullets / 30;
+    }
+    if (info[0] === 'PSG1' && bullets % 5 !== 0) {
+        return parseInt(bullets / 5) + 1;
+    } else if (info[0] === 'PSG1') {
+        return bullets / 5;
+    }
+    return 'Wrong input';
+}
+
+
+console.log(magNumber(["PT92", 17]));        // 3]
+console.log(magNumber(["M4A1", 8]));         // 1]
+console.log(magNumber(["M16A2", 19]));       // 2]
+console.log(magNumber(["PSG1", 31]));        // 19]
+console.log(magNumber(["PT92", 19]));        // 4]
+console.log(magNumber(["M16A2", 800]));      // 80]
+
+console.clear();
+
+console.log('----Reversed words----');
+
+function reverseWords(str) {
+    let newStr = "";
+    const strList = str.split(' ');
+    for (let i = strList.length - 1; i >= 0; i--) {
+        newStr += (strList[i] + ' ');
+    }
+    return newStr.trimEnd();
+}
+
+
+console.log(reverseWords("hello world!"));                        //  , "world! hello")
+console.log(reverseWords("yoda doesn't speak like this"));        //  , "this like speak doesn't yoda")
+console.log(reverseWords("foobar"));                              //  , "foobar")
+console.log(reverseWords("kata editor"));                         //  , "editor kata")
+console.log(reverseWords("row row row your boat"));               //  , "boat your row row row")
+console.log(reverseWords(""));                                    //  , "")
+
+console.clear();
+console.log('------Add Length-----');
+
+function addLength(str) {
+    const array = str.split(' ');
+    let newText = '';
+
+    for (let i = 0; i < array.length; i++) {
+        newText += (array[i] + ' ' + array[i].length + '  ');
+    }
+    let newArray = newText.trimEnd().split('  ');
+
+    return newArray;
+}
+
+
+console.log(addLength('you will win'));  // ["you 3", "will 4", "win 3"]));
+
+
+console.clear();
+
+console.log('-----Difference of Volumes of Cuboids-----')
+
+function findDifference(a, b) {
+    const diff = a[0] * a[1] * a[2] - b[0] * b[1] * b[2]
+    if (diff < 0) {
+        return -1 * diff;
+    }
+    return diff;
+}
+
+
+console.log(findDifference([3, 2, 5], [1, 4, 4]));          // 14);
+console.log(findDifference([9, 7, 2], [5, 2, 2]));          // 106);
+console.log(findDifference([11, 2, 5], [1, 10, 8]));        // 30);
+console.log(findDifference([4, 4, 7], [3, 9, 3]));          // 31);
+console.log(findDifference([15, 20, 25], [10, 30, 25]));    // 0);
+
+console.clear();
+

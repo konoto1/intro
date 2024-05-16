@@ -4,8 +4,9 @@
   "description": "Tomas tomas",
   "main": "index.js",
   "scripts": {
-    "matrix": "node --watch ./js/Namu_darbai/matrix.js",
-    "clock": "node --watch ./js/Namu_darbai/clock.js",
+    "arrow": "node --watch ./js/funkcijos/arrow.js",
+    "matrix": "node --watch ./js/namu_darbai/matrix.js",
+    "clock": "node --watch ./js/namu_darbai/clock.js",
     "method:string": "node --watch ./js/metodai/string.js",
     "method:number": "node --watch ./js/metodai/number.js",
     "typeof": "node --watch ./js/duomenys/typeof.js",

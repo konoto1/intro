@@ -97,5 +97,15 @@ console.log(true && true && true && true); // visos imanomos kombinacijos bus 12
 console.log(!true);
 console.log(!false);
 
+console.clear();
 
+const n1 = 4;
+const n2 = '4';
+if (n1 == n2) {
+    console.log('Taip', n1 + n2, n1 * n2, n1 / n2, n1 - n2); // Rezultatas: Taip 44 16 1 0
+} else {
+    console.log('Ne');
+}
 
+// === pirmiausia tikrinamas duomenu tipas
+// == tikrina tik reiksmes (4 == '4')

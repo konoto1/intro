@@ -753,4 +753,190 @@ console.log(smash(["hello", "world"]));                                        /
 console.log(smash(["hello", "amazing", "world"]));                             // "hello amazing world");
 console.log(smash(["this", "is", "a", "really", "long", "sentence"]));         // "this is a really long sentence");
 
+console.clear();
+console.log('---------Get the mean of an array-------');
+
+function getAverage(marks) {
+    let sum = 0;
+    for (let i = 0; i < marks.length; i++) {
+        sum += marks[i];
+    }
+    return parseInt(sum / marks.length);
+}
+
+
+console.log(getAverage([2, 2, 2, 2]));                   // 2);
+console.log(getAverage([1, 2, 3, 4, 5,]));               // 3);
+console.log(getAverage([1, 1, 1, 1, 1, 1, 1, 2]));       // 1);
+console.log(getAverage([1, 5, 87, 45, 8, 8,]));       // 25);
+
+
+console.clear();
+console.log('------Quadratic Coefficients Solver---');
+
+
+function quadratic(x1, x2) {
+    const a = 1;
+    const b = -(x1) - (x2);
+    const c = -(x1) * -(x2);
+    const result = [a, b, c];
+    //const equation = ((x - x1) * (x - x2)); //x**2 - x*x2 - x*x1 -x1*-x2
+    return result;
+}
+
+
+
+console.log(quadratic(0, 1));         // [1, -1, 0]);
+console.log(quadratic(1, 1));         // [1, -2, 1]);
+console.log(quadratic(-4, -9));       // [1, 13, 36]);
+console.log(quadratic(-5, -4));       // [1, 9, 20]);
+console.log(quadratic(4, -9));        // [1, 5, -36]);
+console.log(quadratic(5, -4));        // [1, -1, -20]);
+
+
+function sc(floor) {
+    if (floor <= 1) {
+        return 'good luck';
+    }
+    if (floor <= 6) {
+        return 'Aa~'.repeat(floor - 1) + ' Pa! Aa!';
+    }
+    return 'Aa~'.repeat(floor - 1) + ' Pa!';
+}
+
+
+console.log(sc(2));         // "Aa~ Pa! Aa!", "good luck!");
+console.log(sc(6));         // "Aa~ Aa~ Aa~ Aa~ Aa~ Pa! Aa!", "good luck!");
+console.log(sc(7));         // "Aa~ Aa~ Aa~ Aa~ Aa~ Aa~ Pa!", "good luck!");
+console.log(sc(10));        // "Aa~ Aa~ Aa~ Aa~ Aa~ Aa~ Aa~ Aa~ Aa~ Pa!", "good luck!");
+console.log(sc(1));         // "", "good luck!");
+console.log(sc(-1));        // "", "good luck!"); 
+
+console.clear();
+console.log('----Training JS #7: if..else and ternary operator-----')
+
+function saleHotdogs(n) {
+    if (n < 5) {
+        return n * 100;
+    }
+    if (5 <= n && n < 10) {
+        return n * 95;
+    }
+    return n * 90;
+}
+
+
+console.log(saleHotdogs(1));            // 100);
+console.log(saleHotdogs(4));            // 400);
+console.log(saleHotdogs(5));            // 475);
+console.log(saleHotdogs(9));            // 855);
+console.log(saleHotdogs(10));           // 900);
+console.log(saleHotdogs(100));          // 9000);
+
+
+console.clear();
+console.log('------Training JS #10: loop statement --for---');
+
+
+function pickIt(arr) {
+    let odd = [], even = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            even.push(arr[i])
+        } else { odd.push(arr[i]) }
+    }
+    return [odd, even];
+}
+
+console.log(pickIt([1, 2]));                        //    [[1], [2]]);
+console.log(pickIt([1, 2, 3]));                     //    [[1, 3], [2]]);
+console.log(pickIt([3, 2, 1]));                     //    [[3, 1], [2]]);
+console.log(pickIt([10, 20, 30]));                  //    [[  ], [10, 20, 30]]);
+console.log(pickIt([11, 21, 31]));                  //    [[11, 21, 31], []]);
+console.log(pickIt([8, 1, 5, 4, 6, 1, 1]));         //    [[1, 5, 1, 1], [8, 4, 6]]);
+
+
+console.clear();
+console.log('-----Training JS #4: Basic data types--Array----');
+
+
+function getLength(arr) {
+    return arr.length;
+}
+function getFirst(arr) {
+    //return the first element of arr
+    return arr[0];
+}
+function getLast(arr) {
+    //return the last element of arr
+    return arr[arr.length - 1];
+}
+function pushElement(arr) {
+    let el = 1;
+    arr.push(el);
+    return arr;
+}
+function popElement(arr) {
+    arr.pop();
+    return arr;
+}
+
+console.log(getLength([1, 2, 3]));                    //  3);
+console.log(getFirst([1, 2, 3]));                     //  1);
+console.log(getLast([1, 2, 3]));                      //  3);
+console.log(pushElement([1, 2, 3]).length);           //  4);
+console.log(popElement([1, 2, 3]).length);            //  2);
+
+
+// const new1 = [1, 2, 3];
+// const new2 = new1.pop();
+// console.log(new1);
+
+console.clear();
+console.log('-----Training JS #15: Methods of Number object--toFixed(), toExponential() and toPrecision()----');
+
+
+
+function howManySmaller(arr, n) {
+    let sum = 0;
+    // let arr1 = [];
+    // for (let i = 0; i < arr.length; i++) {
+    //     arr1.push(parseFloat((arr[i]).toFixed(2)));
+    // }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].toFixed(2) < n) {
+            sum++;
+        }
+    }
+    return sum;
+}
+
+
+console.log(howManySmaller([1.234, 1.235, 1.228], 1.24));               // 2);
+console.log(howManySmaller([1.1888, 1.1868, 1.1838], 1.19));            // 1);
+console.log(howManySmaller([3.1288, 3.1212, 3.1205], 3.1212));          // 2);
+
+
+console.clear();
+console.log('------------Training JS #16: Methods of String object--slice(), substring() and substr()---------');
+
+
+function cutIt(arr) {
+    let shortest = arr[0].length;
+    let arr1 = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length < shortest) {
+            shortest = arr[i].length;
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        arr1.push(arr[i].slice(0, shortest));
+    }
+    return arr1;
+}
+
+
+console.log(cutIt(["3256", "cde", "fgh"]));                           // ["ab", "cd", "fg"]);
+console.log(cutIt(["abcasasas", "defgh", "ijklmn"]));                     // ["abc", "def", "ijk"]);
+console.log(cutIt(["codewars", "javascript", "java"]));             // ["code", "java", "java"]);
 

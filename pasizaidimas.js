@@ -940,3 +940,122 @@ console.log(cutIt(["3256", "cde", "fgh"]));                           // ["ab", 
 console.log(cutIt(["abcasasas", "defgh", "ijklmn"]));                     // ["abc", "def", "ijk"]);
 console.log(cutIt(["codewars", "javascript", "java"]));             // ["code", "java", "java"]);
 
+console.clear();
+console.log('----------Training JS #17: Methods of String object--indexOf(), lastIndexOf() and search()--------');
+
+
+function firstToLast(str, c) {
+    const newStr = str.toLowerCase();
+    if (newStr.indexOf(c) === -1) {
+        return -1;
+    }
+    if (newStr.indexOf(c) === newStr.lastIndexOf(c)) {
+        return 0;
+    }
+    return newStr.lastIndexOf(c) - newStr.indexOf(c);
+
+}
+
+
+console.log(firstToLast("ababc", "a"));             // 2);
+console.log(firstToLast("ababc", "c"));             // 0);
+console.log(firstToLast("ababc", "d"));             // -1);
+
+
+console.clear();
+console.log('-----------Training JS #21: Methods of String object--trim() and the string template------------');
+
+
+function fiveLine(s) {
+    const sS = s.trim();
+    return `${sS}\n${sS.repeat(2)}\n${sS.repeat(3)}\n${sS.repeat(4)}\n${sS.repeat(5)};`
+
+}
+
+
+console.log(fiveLine("  a"));                                       // "a\naa\naaa\naaaa\naaaaa");
+console.log(fiveLine("\txy \n"));                                   // "xy\nxyxy\nxyxyxy\nxyxyxyxy\nxyxyxyxyxy");
+console.log(fiveLine("           Ok               "));              // "Ok\nOkOk\nOkOkOk\nOkOkOkOk\nOkOkOkOkOk");
+
+
+console.clear();
+console.log('-----------Training JS #31: methods of arrayObject---isArray() indexOf() and toString()------------');
+
+function blackAndWhite(arr) {
+    if (Array.isArray(arr) !== true) {
+        return `It's a fake array`;
+    }
+    if (arr.indexOf(5) !== -1 && arr.indexOf(13) !== -1) {
+        return `It's a black array`;
+    }
+    if (arr.indexOf(5) === -1 || arr.indexOf(13) === -1) {
+        return `It's a white array`;
+    }
+}
+
+console.log(blackAndWhite(5, 13));              //"It's a fake array");
+console.log(blackAndWhite([5, 13]));             //"It's a black array");
+console.log(blackAndWhite([5, 12]));             //"It's a white array");
+
+
+console.clear();
+console.log(`-----------If you can't sleep, just count sheep!!------------`);
+
+
+function countSheep(num) {
+    let txt = ``;
+    for (let i = 1; i <= num; i++) {
+        txt += `${i} sheep...`;
+    }
+    return txt;
+}
+
+
+console.log(countSheep(0));         // "");
+console.log(countSheep(1));         // "1 sheep...");
+console.log(countSheep(2));         // "1 sheep...2 sheep...");
+console.log(countSheep(3));         // "1 sheep...2 sheep...3 sheep...");
+
+
+
+console.clear();
+console.log(`-----------Training JS #19: Methods of String object--toUpperCase() toLowerCase() and replace()------------`);
+
+
+function alienLanguage(str) {
+    const newStr = str.toUpperCase().split(' ');
+    const newArray = [];
+    let newText = '';
+    for (let i = 0; i < newStr.length; i++) {
+        newArray.push((newStr[i].slice(0, newStr[i].length - 1) + (newStr[i][(newStr[i].length - 1)]).toLowerCase()));
+    }
+    for (let i = 0; i < newArray.length; i++) {
+        newText += newArray[i] + ' ';
+    }
+    return newText.trim();
+}
+
+
+
+console.log(alienLanguage("My name is John"));           //"My NAMe Is JOHn");
+console.log(alienLanguage("this is an example"));        // "THIs Is An EXAMPLe");
+console.log(alienLanguage("Hello World"));               // "HELLo WORLd");
+console.log(alienLanguage("HELLO WORLD"));               // "HELLo WORLd");
+
+
+console.clear();
+console.log(`-----------Draw stairs------------`);
+
+
+function drawStairs(n) {
+    let text = '';
+    for (let i = 0; i < n; i++) {
+        text += ' '.repeat(i) + 'I\n';
+    }
+    return text.trim();
+}
+
+
+console.log(drawStairs(1));                 // "I", "The first step has no padding on the left, just an 'I'"));
+console.log(drawStairs(3));                 // "I\n I\n  I", "There's something wrong with these 3 steps"));
+console.log(drawStairs(5));                 // "I\n I\n  I\n   I\n    I", "5-step stairs no good"));

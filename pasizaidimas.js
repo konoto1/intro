@@ -1059,3 +1059,180 @@ function drawStairs(n) {
 console.log(drawStairs(1));                 // "I", "The first step has no padding on the left, just an 'I'"));
 console.log(drawStairs(3));                 // "I\n I\n  I", "There's something wrong with these 3 steps"));
 console.log(drawStairs(5));                 // "I\n I\n  I\n   I\n    I", "5-step stairs no good"));
+
+
+console.clear();
+console.log('--------Collatz Conjecture (3n+1)------');
+
+
+// const hotpo = function (n) {
+//     if (n === 0 || n === 1) {
+//         return 0;
+//     }
+//     for (let i = 0; i < n; i += 2) {
+//         console.log(n, i);
+//         if (n % 2 === 0) {
+
+//             m /= i;
+//             // } else if (n % 2 !== 0) {
+//             //     m = n * 3 + 1;
+//             // }
+
+//         }
+//     }
+//     return n;
+// }
+
+//console.log(hotpo(5));
+
+console.clear();
+console.clear(`---------Bingo ( Or Not )-------`);
+
+function bingo(a) {
+    if (a.includes(2) &&
+        a.includes(7) &&
+        a.includes(9) &&
+        a.includes(14) &&
+        a.includes(15)) {
+        return 'WIN';
+    }
+    return 'LOSE';
+}
+
+console.log(bingo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));        //"LOSE");
+console.log(bingo([21, 13, 2, 7, 5, 14, 7, 15, 9, 10]));    //"WIN");
+console.log(bingo([21, 13, 7, 2, 5, 14, 1, 15, 9, 10]));    //"WIN");
+console.log(bingo([21, 13, 15, 14, 9, 1, 2, 9, 10]));    //"WIN");
+
+console.clear();
+console.log('---------Training JS #13: Number object and its properties----');
+
+function whatNumberIsIt(n) {
+    if (n === Number.MAX_VALUE) {
+        return "Input number is Number.MAX_VALUE";
+    }
+    if (n === Number.MIN_VALUE) {
+        return "Input number is Number.MIN_VALUE";
+    }
+    if ('' + n === 'NaN') {
+        return 'Inpun number is Number.NaN';
+    }
+    if (n === -Infinity) {
+        return "Input number is Number.NEGATIVE_INFINITY";
+    }
+    if (n === Infinity) {
+        return "Input number is Number.POSITIVE_INFINITY";
+    }
+    return `Input number is ${n}`;
+}
+
+console.log(whatNumberIsIt(1 / 0));                             // "Input number is Number.POSITIVE_INFINITY");
+console.log(whatNumberIsIt(100));                               // "Input number is 100");
+console.log(whatNumberIsIt(1.7976931348623157e+308));           // "Input number is Number.MAX_VALUE");
+console.log(whatNumberIsIt(5e-324));                            // "Input number is Number.MIN_VALUE");
+console.log(whatNumberIsIt(-Number.MAX_VALUE * 2));             // "Input number is Number.NEGATIVE_INFINITY");
+console.log(whatNumberIsIt(NaN));                               // "Input number is Number.NaN");
+console.log(whatNumberIsIt(Infinity + 1));                      // "Input number is Number.POSITIVE_INFINITY");
+
+//console.log(NaN === NaN) ????
+
+console.clear();
+console.log('----------Crash Override------');
+
+
+// function aliasGen(a, b) {
+//     const abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+//     const aA = (a[0]).toUpperCase();
+//     const bB = (b[0]).toUpperCase();
+//     const firstName = { A: 'Alpha', B: 'Beta', C: 'Cache', M: 'Malware' };
+//     const surname = { A: 'Analogue', B: 'Bomb', C: 'Catalyst', M: 'Mike' };
+
+//     if (abc.includes(aA) && abc.includes(bB)) {
+//         const index1 = abc.indexOf(aA);
+//         const index2 = abc.indexOf(bB);
+//         console.log(index1);
+//         console.log(firstName.M);
+//     }
+//     return 'Your name must start with a letter from A - Z.';
+// }
+// //return `${firstName.M} ${surname.M}`;
+// console.log(aliasGen('mike', 'millington'));
+
+
+
+
+
+
+console.clear();
+console.log('-----------No zeros for heros----')
+
+
+function noBoringZeros(n) {
+    let m = n;
+    for (let i = 0; i < ('' + n).length; i++) {
+        if (m % 10 === 0) {
+            m = m / 10;
+        }
+    }
+    return m;
+}
+
+
+console.log(noBoringZeros(1450));       // 145)
+console.log(noBoringZeros(960000));     // 96)
+console.log(noBoringZeros(1050));       // 105)
+console.log(noBoringZeros(-1050));      // -105)
+console.log(noBoringZeros(-105));       // -105)
+console.log(noBoringZeros(0));           //0)) 
+
+console.clear();
+console.log("----------Student's Final Grade----");
+
+
+function finalGrade(exam, projects) {
+    if (exam > 90 || projects > 10) {
+        return 100;
+    }
+    if (exam > 75 || projects >= 5) {
+        return 90;
+    }
+    if (exam > 50 || projects >= 2) {
+        return 75;
+    } else {
+        return 0;
+    }
+}
+
+console.log(finalGrade(100, 12));   // 100);
+console.log(finalGrade(0, 3));     //90);
+
+console.clear();
+console.log('-------------Find Multiples of a Number----');
+
+function findMultiples(integer, limit) {
+    let arr = [];
+    for (let i = integer; i <= limit; i += integer) {
+        // if (i % integer === 0) {
+        arr.push(i)
+    }
+
+
+    return arr;
+}
+
+console.log(findMultiples(5, 25));      // [5, 10, 15, 20, 25])
+console.log(findMultiples(1, 2));       // [1, 2])
+console.log(findMultiples(5, 7));       // [5])
+console.log(findMultiples(4, 27));      // [4, 8, 12, 16, 20, 24])
+console.log(findMultiples(11, 54));     // [11, 22, 33, 44])
+
+function test(a, b) {
+
+    const d = a;
+    const e = b;
+    const f = { a: 'Jonas', b: 'Petras', c: 'Antanas' };
+    const g = { a: 'Jonaitis', b: 'Petraitis', c: 'Antanaitis' };
+    return f.d, g.e;
+}
+
+console.log(test('a', 'b'));

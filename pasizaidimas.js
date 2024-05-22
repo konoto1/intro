@@ -1148,15 +1148,12 @@ console.log('----------Crash Override------');
 //     const surname = { A: 'Analogue', B: 'Bomb', C: 'Catalyst', M: 'Mike' };
 
 //     if (abc.includes(aA) && abc.includes(bB)) {
-//         const index1 = abc.indexOf(aA);
-//         const index2 = abc.indexOf(bB);
-//         console.log(index1);
-//         console.log(firstName.M);
-//     }
+//        //return `${firstName[aA]} ${surname.[bB]}`;
+//     } // const firstName ir const surname was preloaded in codewars
 //     return 'Your name must start with a letter from A - Z.';
 // }
-// //return `${firstName.M} ${surname.M}`;
-// console.log(aliasGen('mike', 'millington'));
+// 
+
 
 
 
@@ -1226,13 +1223,5 @@ console.log(findMultiples(5, 7));       // [5])
 console.log(findMultiples(4, 27));      // [4, 8, 12, 16, 20, 24])
 console.log(findMultiples(11, 54));     // [11, 22, 33, 44])
 
-function test(a, b) {
 
-    const d = a;
-    const e = b;
-    const f = { a: 'Jonas', b: 'Petras', c: 'Antanas' };
-    const g = { a: 'Jonaitis', b: 'Petraitis', c: 'Antanaitis' };
-    return f.d, g.e;
-}
 
-console.log(test('a', 'b'));

@@ -96,3 +96,13 @@ console.log(Math.random());
 console.log(Math.random());
 console.log(Math.random());
 console.log(Math.random());
+
+console.log('\nSign----------');
+console.log(Math.sign(5));
+console.log(Math.sign(-5));
+console.log(Math.sign(0));
+console.log(Math.sign(-0));
+console.log(Math.sign(NaN));
+// grazina vieneta arba (-) vieneta iskyrus nuli.
+
+

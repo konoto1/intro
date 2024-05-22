@@ -64,3 +64,49 @@ function introduction(stud) {
 for (let i = 0; i < students.length; i++) {
     console.log(introduction(students[i]));
 }
+
+
+const stud3 = {
+    name: 'Petras',
+    age: 77,
+    isMarried: 'false'
+}
+//Supaprastinta objekto sintakse
+console.log(stud3.name);
+console.log(stud3.age);
+console.log(stud3.isMarried);
+
+//standartine objekto sintakse
+
+console.log(stud3['name']);
+console.log(stud3['age']);
+console.log(stud3['isMarried']);
+
+const key = 'age';
+console.log(stud3[key]);
+
+function giveMe(data, key) {
+    return data[key];
+}
+
+console.log(giveMe({ name: 'Jonas', age: 99 }, 'name'));
+console.log(giveMe({ name: 'Jonas', age: 99 }, 'age'));
+console.log(giveMe({ name: 'Jonas', age: 99 }, 'isMarried'));
+console.log(giveMe({ title: 'Svente', page: 1 }, 'title'));
+console.log(giveMe({ title: 'Svente', page: 1 }, 'page'));
+console.log(giveMe({ title: 'Svente', page: 1 }, 'xxx'));
+
+function calcObj(n1, operation, n2) {
+    const mathFunctions = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '/': (a, b) => a / b,
+        '*': (a, b) => a * b,
+    };
+    return mathFunctions[operation](n1, n2);
+}
+
+console.log(calcObj(7, '+', 5));
+console.log(calcObj(7, '-', 5));
+console.log(calcObj(7, '/', 5));
+console.log(calcObj(7, '*', 5));

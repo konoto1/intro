@@ -1225,3 +1225,43 @@ console.log(findMultiples(11, 54));     // [11, 22, 33, 44])
 
 
 
+const a = [-1, 5, -2, 7, 3];
+console.log(a.toSorted())
+
+console.clear();
+console.log('-----Missing number in Unordered Arithmetic Progression-----');
+
+function find(seq) {
+    const arr = seq.sort(((a, b) => a - b));
+    const d = arr[1] - arr[0];
+    let t = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[0] + i * d) {
+            t = arr[0] + i * d;
+            break;
+        }
+    }
+    return t;
+}
+
+console.log(find([3, 9, 1, 11, 13, 5]));                  // 7)
+console.log(find([5, -1, 0, 3, 4, -3, 2, -2]));           // 1)
+console.log(find([2, -2, 8, -8, 4, -4, 6, -6]));           // 0)
+
+
+
+function find(seq) {
+    const newSeq = new Float64Array(seq);
+    const arr = newSeq.sort();
+    const d = arr[1] - arr[0];
+    let t = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[0] + i * d) {
+            t = arr[0] + i * d;
+            break;
+        }
+    }
+    return t;
+}
+
+console.log('Pomidoras'.slice());

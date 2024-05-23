@@ -1254,6 +1254,7 @@ function find(seq) {
     const newSeq = new Float64Array(seq);
     const arr = newSeq.sort();
     const d = arr[1] - arr[0];
+    console.log(newSeq);
     let t = 0;
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] !== arr[0] + i * d) {
@@ -1264,4 +1265,60 @@ function find(seq) {
     return t;
 }
 
-console.log('Pomidoras'.slice());
+
+
+console.log('----------Be Concise IV - Index of an element in an array----------');
+
+
+const find1 = (a, e) => a.indexOf(e) !== -1 ? a.indexOf(e) : 'Not found';
+
+console.log(find1([1, 3, 9, -6, -9, 8, 0], 0));
+
+
+console.log(String.fromCharCode(65)); // String.fromCharCode() returns the symbol at that value ASCII
+
+console.clear();
+console.log('----------Training JS #18: Methods of String object--concat() split() and its good friend join()-------');
+
+function splitAndMerge(string, separator) {
+    const txt = string.split(' ');
+    let arr = [];
+    for (let i = 0; i < txt.length; i++) {
+        arr.push(txt[i].split(''));
+    }
+    console.log(arr);
+    return arr.join(' ').replaceAll(',', separator);
+}
+
+
+console.log(splitAndMerge("My name is John", " "));         // "M y n a m e i s J o h n");
+console.log(splitAndMerge("My name is John", "-"));         // "M-y n-a-m-e i-s J-o-h-n");
+console.log(splitAndMerge("Hello World!", "."));            // "H.e.l.l.o W.o.r.l.d.!");
+console.log(splitAndMerge("Hello World!", ","));            // "H,e,l,l,o W,o,r,l,d,!");
+
+
+console.clear();
+console.log('--------');
+
+function isOpposite(s1, s2) {
+    if (s1.length === 0 || s2.length === 0) {
+        return false;
+    }
+    let newS1 = '';
+    for (let i = 0; i < s1.length; i++) {
+        if (s1[i] !== s1[i].toUpperCase()) {
+            newS1 += s1[i].toUpperCase();
+        } else if ((s1[i] === s1[i].toUpperCase())) {
+            newS1 += s1[i].toLowerCase();
+        }
+    }
+    return newS1 === s2;
+}
+
+
+console.log(isOpposite("ab", "AB"));                 // true);
+console.log(isOpposite("aB", "Ab"));                 // true);
+console.log(isOpposite("aBcd", "AbCD"));            // true);
+console.log(isOpposite("aBcde", "AbCD"));           // false);
+console.log(isOpposite("AB", "Ab"));                 // false);
+console.log(isOpposite("", ""));                     // false);

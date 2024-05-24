@@ -1322,3 +1322,239 @@ console.log(isOpposite("aBcd", "AbCD"));            // true);
 console.log(isOpposite("aBcde", "AbCD"));           // false);
 console.log(isOpposite("AB", "Ab"));                 // false);
 console.log(isOpposite("", ""));                     // false);
+
+console.clear();
+console.log('---------Training JS #29: methods of arrayObject---concat() and join()-------');
+
+function bigToSmall(arr) {
+    const newArr = (arr.flat()).sort((a, b) => a - b).reverse();
+    return newArr.join('>');
+}
+
+console.log(bigToSmall([[1, 2], [3, 4], [5, 6]]));      // "6>5>4>3>2>1");
+console.log(bigToSmall([[1, 3, 5], [2, 4, 6]]));        // "6>5>4>3>2>1");
+console.log(bigToSmall([[1, 1], [1], [1, 1]]));     // "1>1>1>1>1");
+
+console.clear();
+console.log('---------Training JS #6: Basic data types--Boolean and conditional statements if..else-----');
+
+function trueOrFalse(val) {
+    if (val == false || val === undefined || val === null) {
+        return 'false';
+    } else {
+        return 'true';
+    }
+}
+
+let a1 = 1, b = 2, c = 1;
+console.log(trueOrFalse(a1 > b));       // "false");
+console.log(trueOrFalse(a1 === b));     // "false");
+console.log(trueOrFalse(a1 < b));       // "true");
+console.log(trueOrFalse(a1 !== b));     // "true");
+console.log(trueOrFalse(b > c));        // "true");
+console.log(trueOrFalse(b === c));      // "false");
+console.log(trueOrFalse(b < c));        // "false");
+console.log(trueOrFalse(b !== c));      // "true");
+console.log(trueOrFalse(a1 === c));     // "true");
+console.log(trueOrFalse(a1 !== c));     // "false");
+//test for logical operators and bitwise operators
+let t = true, f = false;
+console.log(trueOrFalse(t && f));        // "false");
+console.log(trueOrFalse(f && f));        // "false");
+console.log(trueOrFalse(t && t));        // "true");
+console.log(trueOrFalse(t || f));        // "true");
+console.log(trueOrFalse(t || t));        // "true");
+console.log(trueOrFalse(f || f));        // "false");
+console.log(trueOrFalse(t & f));         // "false");
+console.log(trueOrFalse(t & t));         //"true");
+console.log(trueOrFalse(f & f));         // "false");
+console.log(trueOrFalse(t | f));         //"true");
+console.log(trueOrFalse(t | t));         //"true");
+console.log(trueOrFalse(f | f));         //"false");
+console.log(trueOrFalse(!t));            // "false");
+console.log(trueOrFalse(!f));            // "true");
+console.log(trueOrFalse(t ^ f));         // "true");
+console.log(trueOrFalse(t ^ t));         // "false");
+console.log(trueOrFalse(f ^ f));         // "false");
+// test for implicit conversion
+console.log(trueOrFalse(true));          //   "true");
+console.log(trueOrFalse(123));           //   "true");
+console.log(trueOrFalse("123"));         //    "true");
+console.log(trueOrFalse(["123"]));       //    "true");
+console.log(trueOrFalse("false"));       //    "true");
+console.log(trueOrFalse(false));         //   "false");
+console.log(trueOrFalse(0));             //     "false");
+console.log(trueOrFalse(""));            //  "false");
+console.log(trueOrFalse(null));          //  "false");
+console.log(trueOrFalse([].length));     //    "false");
+console.log(trueOrFalse(undefined));     //    "false");
+
+
+
+
+function changeMe(moneyIn) {
+    if (moneyIn !== '20p' && moneyIn !== '50p' && moneyIn !== '£1' && moneyIn !== '£2' && moneyIn !== '£5') {
+        return 'Wrong input.';
+    }
+    if (moneyIn === '20p') {
+        return '10p 10p';
+    }
+    const coins = {
+        '£5': 500,
+        '£2': 200,
+        '£1': 100,
+        '50p': 50,
+        '20p': 20,
+    };
+    const coins20 = Math.floor(coins[moneyIn] / 20);
+    const coins10 = (coins[moneyIn] % 20) / 10;
+    const txt = `${'20p '.repeat(coins20)}${'10p'.repeat(coins10)}`;
+    return txt.trim();
+}
+
+
+console.log(changeMe('£1'));
+console.log(changeMe('Money'));
+console.log(changeMe('£2'));
+console.log(changeMe('£5'));
+console.log(changeMe('50p'));
+console.log(changeMe('20p'));
+
+
+//age comparison;
+const describeAge = age => age <= 12 ? t1 + 'kid' : (age > 12 && age <= 17 ? t1 + 'teenager' : (age > 17) && age <= 64 ? t1 + 'adult' : t1 + 'elderly');
+const t1 = "You're a(n) ";
+
+
+console.clear();
+console.log('---------Bubblesort Once-------');
+
+function bubblesortOnce(a) {
+    let newA = [...a];
+    for (let i = 0; i < newA.length; i++) {
+        if (newA[i] > newA[i + 1]) {
+            newA[i + 1] = newA[i],
+                newA[i] = a[i + 1];
+        }
+    }
+    return newA;
+}
+
+console.log(bubblesortOnce([9, 7, 5, 3, 1, 2, 4, 6, 8]));       //[7, 5, 3, 1, 2, 4, 6, 8, 9]
+console.log(bubblesortOnce([103, 113, 87]));       //[7, 5, 3, 1, 2, 4, 6, 8, 9]
+console.log(bubblesortOnce([2, 3, 5, 1, 7, 4, 6, 8, 9, 10]));       //[7, 5, 3, 1, 2, 4, 6, 8, 9]
+console.log(bubblesortOnce([2, 4, 1]));       //[7, 5, 3, 1, 2, 4, 6, 8, 9]
+
+// String.prototype.isUpperCase = function () {
+//     if (String(this).length === 0) {
+//         return true;
+//     }
+//     if (String(this) === this.toUpperCase()) {
+//         return true;
+//     }
+//     return false;
+// } Kaip sitas reikals veikia???
+
+console.clear();
+console.log('-----Thinking & Testing : How many "word"?-----');
+
+function testit(s) {
+    let sum = 0;
+    let n = ['W', 'O', 'R', 'D'];
+    let z = 0;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i].toUpperCase() === n[z]) {
+            z++, sum++;
+        }
+        if (z > 3) {
+            z = 0;
+        }
+    }
+    return Math.floor(sum / 4);
+}
+
+console.log(testit("word"));                                                                                       //  1, "");
+console.log(testit("hello world"));                                                                                //  1, "");
+console.log(testit("I love codewars."));                                                                           //  0, "");
+console.log(testit("My cat waiting for a dog."));                                                                  //  1, "");
+console.log(testit("We often read book, a word hidden in the book."));                                             //  2, "");
+console.log(testit("When you in order to do something by a wrong way, your heart will missed somewhere."));        //  2, "");
+console.log(testit("This sentence have one word."));                                                               //  1, "");
+console.log(testit("This sentence have two word, not one word."));                                                 //  2, "");
+console.log(testit("One word + one word = three word ;-)"));                                                       //  3, "");
+console.log(testit("Can you find more word for me?"));                                                             //  1, "");
+
+console.clear();
+console.log('-------Thinking & Testing : Something capitalized-----');
+
+function testit(s) {
+    let sS = s.split(' ');
+    console.log(sS);
+    let newS = '';
+    for (let i = 0; i < sS.length; i++) {
+        if (sS[i].length === 1) {
+            newS += sS[i].toUpperCase() + ' ';
+        } else if ((sS[i].length > 1)) {
+            newS += sS[i].slice(0, - 1) + sS[i][(sS[i]).length - 1].toUpperCase() + ' ';
+        }
+    }
+    return newS.trim();
+}
+
+console.log(testit(""));             // "", "")
+console.log(testit("a"));            // "A", "")
+console.log(testit("b"));            // "B", "")
+console.log(testit("a a"));          // "A A", "")
+console.log(testit("a b"));          // "A B", "")
+console.log(testit("a b c"));        //"A B C", "")
+console.log(testit("ab ab"));        //"aB aB", "")
+
+console.log('labas'.slice(0, -1))
+
+console.clear();
+console.log('-----------Unique In Order------------');
+
+
+const uniqueInOrder = function (iterable) {
+    const arr = [];
+    for (let i = 0; i < iterable.length; i++) {
+        if (iterable[i] !== iterable[i + 1]) {
+            arr.push(iterable[i]);
+        }
+    }
+    return arr;
+}
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));      // ['A', 'B', 'C', 'D', 'A', 'B'])
+
+
+console.clear();
+console.log('--------------------Collatz Conjecture (3n+1)------------');
+
+const hotpo = function (n) {
+    if (n === 0 || n === 1) {
+        return 0;
+    }
+    let m = n;
+    let t = 0;
+    for (let i = 0; i >= 0; i++) {
+        if (m === 1) {
+            break;
+        }
+        else if (m % 2 === 0) {
+            m /= 2, t++;
+        }
+        else if (m % 2 !== 0) {
+            m = 3 * m + 1, t++;
+        }
+    }
+    return t;
+}
+
+console.log(hotpo(1));          // 0);
+console.log(hotpo(5));          // 5);
+console.log(hotpo(6));          // 8);
+console.log(hotpo(23));         // 15);
+
+
+console.log('labaslabas'.slice(3, 6))

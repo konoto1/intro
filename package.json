@@ -4,6 +4,7 @@
   "description": "Tomas tomas",
   "main": "index.js",
   "scripts": {
+    "for_other": "node --watch ./js/ciklai/for_other.js",
     "switch": "node --watch ./js/palyginimas/switch.js",
     "method:array": "node --watch ./js/metodai/array.js",
     "destruct": "node --watch ./js/metodai/destruct.js",

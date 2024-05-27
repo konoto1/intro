@@ -44,12 +44,6 @@ console.log([...marks].indexOf('labas'));
 console.log([...marks].indexOf(10));
 console.log([...marks].indexOf(6));
 
-// funstion turboIndexOF (list, search) {
-// [10, 2, 8, 4, 6] -> [2]; true
-// [10, 2, 8, 4, 6] -> [2, 8]; true
-// [10, 2, 8, 4, 6] -> [2, 8, 4]; true
-// [10, 2, 8, 4, 6] -> [2, 8, 6]; false
-//}
 
 console.log([...marks].indexOf(6, 2));
 console.log([...marks].indexOf(6, 5));
@@ -69,6 +63,7 @@ console.log([...marks].lastIndexOf(10));
 console.log([...marks].lastIndexOf(7));
 console.log([...marks].lastIndexOf(4));
 console.log([...marks, 7, 9, 4, 3].lastIndexOf(4));
+console.log([...marks, 7, 9, 4, 3].lastIndexOf(4, 8, 6));
 
 console.log('\npop---------');
 const marks2 = [...marks];
@@ -97,7 +92,7 @@ console.log(marks5);
 console.log(marks5.shift());
 console.log(marks5);
 
-console.log('\reverse----------');
+console.log('\nreverse----------');
 console.log([...marks]);
 console.log([...marks].reverse());
 
@@ -109,3 +104,20 @@ console.log(demo);
 const demo1 = demo.toReversed(); //pakeicia i nauja masyva.
 console.log(demo1);
 console.log(demo);
+
+// function turboIndexOF (list, search) {
+// [10, 2, 8, 4, 6] -> [2]; true
+// [10, 2, 8, 4, 6] -> [2, 8]; true
+// [10, 2, 8, 4, 6] -> [2, 8, 4]; true
+// [10, 2, 8, 4, 6] -> [2, 8, 6]; false
+//}
+
+
+function turboIndexOF(list, search) {
+    const list1 = [...list].toString();
+    const search1 = [...search].toString();
+    return `[${list}] includes ---> [${search}]: ${list1.includes(search1)}`;
+
+}
+
+console.log(turboIndexOF([10, 5, 11, 6, 9, 12], [10, 5]));

@@ -71,3 +71,28 @@ console.log(sentence1);
 const { name1: f1name2, count: f1count2 } = food()
 const sentence2 = `Valgysi: ${f1name2}; Kiekis: ${f1count2}`;
 console.log(sentence2);
+
+function drinks(...list) {
+    console.log(list);
+    return `Gerimu kiekis: ${list.length}`;
+}
+
+console.log(drinks('a', 'b', 'c'));
+
+function iLike(name, list) {
+    console.log(list.length);
+    return `${name} mesgsta ${list.length} spalvas`;
+
+}
+
+console.log(iLike('Jonas', 'red', 'blue'));
+console.log(iLike('Maryte', 'white', 'black', 'grey'));
+
+function nextFunc(a, b, c, ...restParams) {
+    return null;
+}
+
+const marks = [10, 2, 8, 4, 6];
+console.log(Math.max(...marks));
+console.log(Math.min(...marks));
+console.log(...marks);

@@ -1558,3 +1558,54 @@ console.log(hotpo(23));         // 15);
 
 
 console.log('labaslabas'.slice(3, 6))
+
+console.clear();
+console.log('-----Sum The Strings-----');
+
+function sumStr(a, b) {
+    if (a.length === 0 && b.length === 0) {
+        return 0;
+    }
+    if (a.length === 0) {
+        let sum = 0 + parseInt(b);
+    }
+    if (b.length === 0) {
+        sum = 0 + parseInt(a);
+    }
+    sum = parseInt(a) + parseInt(b);
+    return '' + sum;
+}
+
+console.log(sumStr("4", "5"));           // "9");
+console.log(sumStr("34", "5"));         // "39");
+console.log(sumStr("jonas", "5"));         // "39");
+console.log(sumStr("34", "5"));         // "39");
+
+console.clear();
+console.log('-----Flick Switch----');
+
+
+function flickSwitch(arr) {
+    let newArr = [];
+    let x = true;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== 'flick') {
+            newArr.push(x);
+        } else if (arr[i] === 'flick') {
+            x = !x,
+                newArr.push(x);
+        }
+    }
+    return newArr;
+}
+
+
+console.log(flickSwitch(["codewars", "flick", "code", "wars"]));                                   //           [true, false, false, false]);
+console.log(flickSwitch(["flick", "chocolate", "adventure", "sunshine"]));                         //           [false, false, false, false]);
+console.log(flickSwitch(["bicycle", "jarmony", "flick", "sheep", "flick"]));                       //          [true, true, false, false, true]);
+console.log(flickSwitch(["flick", "flick", "flick", "flick", "flick"]));                           //           [false, true, false, true, false]);
+console.log(flickSwitch(["john, smith, susan", "flick"]));                                         //          [true, false]);
+console.log(flickSwitch(["bicycle"]));                                                             //          [true]);
+console.log(flickSwitch(["flick"]));                                                               //          [false]);
+console.log(flickSwitch([])); //[]);                                                                 
+

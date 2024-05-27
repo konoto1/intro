@@ -1609,3 +1609,52 @@ console.log(flickSwitch(["bicycle"]));                                          
 console.log(flickSwitch(["flick"]));                                                               //          [false]);
 console.log(flickSwitch([])); //[]);                                                                 
 
+
+
+console.clear();
+console.log('------Training JS #12: loop statement --for..in and for..of----');
+
+
+function giveMeFive(obj) {
+    let arr = [];
+    for (let key in obj) {
+        if (key.length === 5) {
+            arr.push(key);
+        }
+        if (obj[key].length === 5) {
+            arr.push(obj[key])
+        }
+    }
+    return arr;
+}
+
+console.log(giveMeFive({ Our: "earth", is: "a", beautyful: "world" }));                         // ["earth", "world"]);
+console.log(giveMeFive({ Ihave: "enough", money: "to", buy: "a", car: "model" }));              // ["Ihave", "money", "model"]);
+console.log(giveMeFive({ Pears: "than1", apple: "sweet" }));                                     // ["Pears", "apple", "sweet"]);
+
+console.clear();
+console.log('--------------Training JS #9: loop statement --while and do..while-----');
+
+
+function padIt(str, n) {
+    let txt1 = '';
+    let txt2 = '';
+    let m = 0;
+    while (m < n) {
+        m++;
+        if ((n - m) % 2 === 0) {
+            txt1 += '*';
+        }
+        if ((n - m) % 2 !== 0) {
+            txt2 += "*"
+        }
+    }
+    return txt1 + str + txt2;
+}
+
+
+console.log(padIt("a", 1));         // "*a");
+console.log(padIt("a", 2));         // "*a*");
+console.log(padIt("a", 3));         // "**a*");
+console.log(padIt("a", 4));         // "**a**");
+console.log(padIt("a", 5));         // "***a**");

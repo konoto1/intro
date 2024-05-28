@@ -1658,3 +1658,53 @@ console.log(padIt("a", 2));         // "*a*");
 console.log(padIt("a", 3));         // "**a*");
 console.log(padIt("a", 4));         // "**a**");
 console.log(padIt("a", 5));         // "***a**");
+
+
+console.clear();
+console.log('------------Simple Fun #18: Candles--------------');
+
+
+function candles(candlesNumber, makeNew) {
+    if (candlesNumber === makeNew) {
+        return candlesNumber + 1;
+    } else if (candlesNumber < makeNew) {
+        return candlesNumber;
+    }
+    let candle = candlesNumber;
+    let sum = 0;
+    while (true) {
+        sum += Math.floor(candle / makeNew);
+        candle = Math.floor(candle / makeNew);
+        if (candle < makeNew && ((candle + candle % makeNew)) % makeNew === 0) {
+            sum += 1;
+            break;
+        }
+    }
+    return sum + candlesNumber;
+}
+
+
+console.log(candles(5, 2));                 // 9, 'candles(5, 2)')
+console.log(candles(1, 2));                 // 1, 'candles(1, 2)')
+console.log(candles(3, 3));                 // 4, 'candles(3, 3)')
+console.log(candles(11, 3));                    // 16, 'candles(11, 3)')
+
+console.clear();
+console.log('------Simple Fun #352: Reagent Formula-----');
+
+function isValid(formula) {
+    if (formula.includes(1) && formula.includes(2)) {
+        return false;
+    } else if (formula.includes(3) && formula.includes(4)) {
+        return false;
+    }
+}
+
+console.log(isValid([1, 3, 7]))                 // true)
+console.log(isValid([7, 1, 2, 3]))                  // false)
+console.log(isValid([1, 3, 5, 7]))                  // false)
+console.log(isValid([1, 5, 6, 7, 3]))                   // true)
+console.log(isValid([5, 6, 7]))                 // true)
+console.log(isValid([5, 6, 7, 8]))                  // true)
+console.log(isValid([6, 7, 8]))                 // false)
+console.log(isValid([7, 8]))                    // true)

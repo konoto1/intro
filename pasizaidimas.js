@@ -1661,24 +1661,48 @@ console.log(padIt("a", 5));         // "***a**");
 
 
 console.clear();
+console.log('------Simple Fun #352: Reagent Formula-----');
+
+function isValid(formula) {
+    if (formula.includes(1) && formula.includes(2)) {
+        return false;
+    } else if (formula.includes(3) && formula.includes(4)) {
+        return false;
+    } else if (formula.includes(5) && !(formula.includes(6)) || formula.includes(6) && !(formula.includes(5))) {
+        return false;
+    } else if (formula.includes(7) || formula.includes(8)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(isValid([1, 3, 7]));                 // true)
+console.log(isValid([7, 1, 2, 3]));                  // false)
+console.log(isValid([1, 3, 5, 7]));                  // false)
+console.log(isValid([1, 5, 6, 7, 3]));                   // true)
+console.log(isValid([5, 6, 7]));                 // true)
+console.log(isValid([5, 6, 7, 8]));                  // true)
+console.log(isValid([6, 7, 8]));                 // false)
+console.log(isValid([7, 8]));                    // true)
+
+
+console.clear();
 console.log('------------Simple Fun #18: Candles--------------');
 
 
 function candles(candlesNumber, makeNew) {
-    if (candlesNumber === makeNew) {
-        return candlesNumber + 1;
-    } else if (candlesNumber < makeNew) {
-        return candlesNumber;
-    }
-    let candle = candlesNumber;
-    let sum = 0;
+    let candles = candlesNumber; //3 / 1 / 1
+    let left = 0;                //2 / 2 / 0
+    let sum = 0;               //3 + 1 + 1
     while (true) {
-        sum += Math.floor(candle / makeNew);
-        candle = Math.floor(candle / makeNew);
-        if (candle < makeNew && ((candle + candle % makeNew)) % makeNew === 0) {
-            sum += 1;
+        sum += Math.floor((candles + left) / makeNew);
+        candles = Math.floor((candles + left) / makeNew);
+        left = (candles + left) % makeNew;
+        if ((candles + left) / makeNew < 1) {
             break;
         }
+
     }
     return sum + candlesNumber;
 }
@@ -1688,23 +1712,119 @@ console.log(candles(5, 2));                 // 9, 'candles(5, 2)')
 console.log(candles(1, 2));                 // 1, 'candles(1, 2)')
 console.log(candles(3, 3));                 // 4, 'candles(3, 3)')
 console.log(candles(11, 3));                    // 16, 'candles(11, 3)')
+// console.log(candles(34, 2));                    // 67,
+// console.log(candles(35, 2));                    // 67, 
 
 console.clear();
-console.log('------Simple Fun #352: Reagent Formula-----');
+console.log('----------Ordered Count of Characters--------');
 
-function isValid(formula) {
-    if (formula.includes(1) && formula.includes(2)) {
-        return false;
-    } else if (formula.includes(3) && formula.includes(4)) {
-        return false;
+const orderedCount = function (text) {
+    let newText = text;
+    let arr = [];
+    while (newText.length > 0) {
+        const length = newText.length - (newText.replaceAll(`${newText[0]}`, '')).length;
+        arr.push([newText[0], length]);
+        newText = newText.replaceAll(newText[0], '');
+
     }
+    return arr;
 }
 
-console.log(isValid([1, 3, 7]))                 // true)
-console.log(isValid([7, 1, 2, 3]))                  // false)
-console.log(isValid([1, 3, 5, 7]))                  // false)
-console.log(isValid([1, 5, 6, 7, 3]))                   // true)
-console.log(isValid([5, 6, 7]))                 // true)
-console.log(isValid([5, 6, 7, 8]))                  // true)
-console.log(isValid([6, 7, 8]))                 // false)
-console.log(isValid([7, 8]))                    // true)
+
+
+
+console.log(orderedCount("abracadabra"));          // [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]],
+console.log(orderedCount("Code Wars"));            //[['C', 1], ['o', 1], ['d', 1], ['e', 1], [' ', 1], ['W', 1], ['a', 1], ['r', 1], ['s', 1]]],
+console.log(orderedCount("233312"));           // [['2', 2], ['3', 3], ['1', 1]]],
+
+
+console.clear();
+console.log('-----------Make the Deadfish Swim--------');
+
+function parse(text) {
+    const newText = text.toUpperCase();
+    let result = 0;
+    let arr = [];
+    for (const index of newText) {
+        console.log(result);
+        if (index === 'I') {
+            result += 1;
+        } else if (index === 'D') {
+            result -= 1;
+        } else if (index === 'S') {
+            result = result ** 2;
+        } else if (index === 'O') {
+            arr.push(result);
+        }
+    }
+    return arr;
+}
+
+
+console.log(parse("iiisdoso"));             // [8, 64]);
+console.log(parse("iiisxxxdoso"));              // [8, 64]);
+
+console.clear();
+console.log('----------Begin your day with a challenge, but an easy one.-----');
+
+
+function oneTwoThree(n) {
+    if (n === 0) {
+        return ['0', '0'];
+    }
+    const text = '' + n;
+    let arr = [];
+    let txt = '';
+    for (let i = text.length - 1; i > -1; i--) {
+        txt += text[i].repeat(i + 1);
+    }
+    arr.push(txt);
+    arr.push('1'.repeat(n));
+    return arr;
+}
+
+console.log(oneTwoThree(140));
+
+console.clear();
+console.log('------Training JS #14: Methods of Number object--toString() and toLocaleString()---');
+
+function colorOf(r, g, b) {
+    let r1 = r.toString(16);
+    let g1 = g.toString(16);
+    let b1 = b.toString(16);
+    if (r1.length === 1) {
+        r1 = '0' + r1;
+    }
+    if (g1.length === 1) {
+        g1 = '0' + g1;
+    }
+    if (b1.length === 1) {
+        b1 = '0' + b1;
+    }
+    const color = `#${r1}${g1}${b1}`;
+    return color;
+}
+
+console.log(colorOf(255, 0, 0));         // "#ff0000");
+
+console.log(colorOf(0, 111, 0));         // "#006f00");
+
+console.log(colorOf(1, 2, 3));           // "#010203");
+
+
+console.clear();
+console.log('---------Training Time-------');
+
+
+function shuffleIt(arr, ...restOfDict) {
+    const input = [...restOfDict];
+    const newArr = [...arr];
+    // newArr[input[i][i]] = arr[input[i][i + 1]];
+    // newArr[input[i][i + 1]] = arr[input[i][i]];
+    return newArr;
+}
+
+
+console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2]));                       // [1, 3, 2, 4, 5]);
+console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4]));               // [1, 3, 2, 5, 4]);
+// console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4], [2, 3]));       // [1, 3, 5, 2, 4]);

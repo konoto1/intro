@@ -1819,12 +1819,16 @@ console.log('---------Training Time-------');
 function shuffleIt(arr, ...restOfDict) {
     const input = [...restOfDict];
     const newArr = [...arr];
-    // newArr[input[i][i]] = arr[input[i][i + 1]];
-    // newArr[input[i][i + 1]] = arr[input[i][i]];
+    for (let i = 0; i < input.length; i++) {
+        const arr1 = [...newArr];
+        newArr[input[i][0]] = arr1[input[i][1]],
+            newArr[input[i][1]] = arr1[input[i][0]];
+
+    }
     return newArr;
 }
 
 
 console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2]));                       // [1, 3, 2, 4, 5]);
 console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4]));               // [1, 3, 2, 5, 4]);
-// console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4], [2, 3]));       // [1, 3, 5, 2, 4]);
+console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4], [2, 3]));       // [1, 3, 5, 2, 4]);

@@ -1896,3 +1896,90 @@ console.log(tailAndHead1([123, 456, 789, 12, 34, 56, 78]));                    /
 console.log(tailAndHead1([35456, 782, 569, 2454, 875]));                       //   12012);
 console.log(tailAndHead1([1, 2, 3, 4, 5]));                                    //   945);
 console.log(tailAndHead1([111, 2345, 66, 78, 900]));                           //  7293);
+
+
+console.clear();
+console.log('----------Welcome!-------');
+
+
+function greet(language) {
+    const text = language.toLowerCase();
+    const welcome = {
+        english: "Welcome",
+        czech: "Vitejte",
+        danish: "Velkomst",
+        dutch: "Welkom",
+        estonian: "Tere tulemast",
+        finnish: "Tervetuloa",
+        flemish: "Welgekomen",
+        french: "Bienvenue",
+        german: "Willkommen",
+        irish: "Failte",
+        italian: "Benvenuto",
+        latvian: "Gaidits",
+        lithuanian: "Laukiamas",
+        polish: "Witamy",
+        spanish: "Bienvenido",
+        swedish: "Valkommen",
+        welsh: "Croeso",
+    };
+    if (welcome[text] === undefined) {
+        return welcome['english'];
+    }
+    return welcome[text];
+}
+
+console.log(greet('irish'));
+
+console.clear();
+console.log('----------CSV representation of array------------');
+
+function toCsvText(array) {
+    let text = '';
+    for (let i = 0; i < array.length; i++) {
+        if (i === array.length - 1) {
+            text += array[i];
+        } else {
+            text += array[i] + 'n';
+        }
+    }
+    return text;
+}
+
+
+console.log(toCsvText([
+    [0, 1, 2, 3, 45],
+    [10, 11, 12, 13, 14],
+    [20, 21, 22, 23, 24],
+    [30, 31, 32, 33, 34]
+]));                                 //'0,1,2,3,45\n10,11,12,13,14\n20,21,22,23,24\n30,31,32,33,34');
+
+console.log(toCsvText([
+    [-25, 21, 2, -33, 48],
+    [30, 31, -32, 33, -34]
+]));                                //'-25,21,2,-33,48\n30,31,-32,33,-34');
+
+console.log(toCsvText([
+    [5, 55, 5, 5, 55],
+    [6, 6, 66, 23, 24],
+    [666, 31, 66, 33, 7]
+]));                            // '5,55,5,5,55\n6,6,66,23,24\n666,31,66,33,7');
+
+
+console.clear();
+console.log('----------Training JS #27: methods of arrayObject---filter()-----------');
+
+function countGrade(scores) {
+    const s = scores.filter(x => x === 100).length;
+    const a = scores.filter(x => 90 <= x && x < 100).length;
+    const b = scores.filter(x => 80 <= x && x < 90).length;
+    const c = scores.filter(x => 60 <= x && x < 80).length;
+    const d = scores.filter(x => 0 <= x && x < 60).length;
+    const x = scores.filter(x => x === -1).length;
+    const result = { S: s, A: a, B: b, C: c, D: d, X: x };
+    return result;
+}
+
+console.log(countGrade([50, 60, 70, 80, 90, 100]));                //  { S: 1, A: 1, B: 1, C: 2, D: 1, X: 0 });
+console.log(countGrade([65, 75, , 85, 85, 95, 100, 100]));         //  { S: 2, A: 1, B: 2, C: 2, D: 0, X: 0 });
+console.log(countGrade([-1, -1, -1, -1, -1, -1]));                 //  { S: 0, A: 0, B: 0, C: 0, D: 0, X: 6 });

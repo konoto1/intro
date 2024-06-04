@@ -1832,3 +1832,67 @@ function shuffleIt(arr, ...restOfDict) {
 console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2]));                       // [1, 3, 2, 4, 5]);
 console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4]));               // [1, 3, 2, 5, 4]);
 console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4], [2, 3]));       // [1, 3, 5, 2, 4]);
+
+console.clear();
+console.log(`------------Training JS #36: methods of Math---kata author's lover: random()-------------`);
+
+function rndCode() {
+    const text = "ABCDEFGHIJKLM";
+    const symbols = "~!@#$%^&*";
+    const a = (Math.floor(Math.random() * 13));
+    const b = (Math.floor(Math.random() * 13));
+    const c = (Math.floor(Math.random() * 10));
+    const d = (Math.floor(Math.random() * 10));
+    const e = (Math.floor(Math.random() * 10));
+    const f = (Math.floor(Math.random() * 10));
+    const g = (Math.floor(Math.random() * 9));
+    const h = (Math.floor(Math.random() * 9));
+    let code = `${text[a]}${text[b]}${c}${d}${e}${f}${symbols[g]}${symbols[h]}`;
+    return code;
+}
+
+console.log(rndCode());
+
+console.clear();
+console.log(`------------Training JS #30: methods of arrayObject---reduce() and reduceRight()-------------`);
+
+function tailAndHead(arr) {
+    const arr1 = arr.map((a) => a + '').map((a) => parseInt(a.at(-1)));
+    const arr2 = arr.map((a) => a + '').map((a) => parseInt(a.at(0)));
+    let arr3 = [];
+    for (let i = 0; i < arr1.length - 1; i++) {
+        arr3.push(arr1[i] + arr2[i + 1])
+    }
+    arr3 = arr3.reduce((a, b) => a * b);
+    return arr3;
+}
+
+console.log(tailAndHead([123, 456, 789, 12, 34, 56, 78]));                    //   532350);
+console.log(tailAndHead([35456, 782, 569, 2454, 875]));                       //   12012);
+console.log(tailAndHead([1, 2, 3, 4, 5]));                                    //   945);
+console.log(tailAndHead([111, 2345, 66, 78, 900]));                           //  7293);
+// 7 13 10 5 9 13
+
+
+function tailAndHead1(arr) {
+    const arr1 = arr.map((a) => a + '');
+    const arr2 = arr.map((a) => a + '');
+    let arr3 = [];
+    let array1 = [];
+    let array2 = [];
+    for (let i = 0; i < arr1.length - 1; i++) {
+        array1.push(parseInt(arr1[i][arr1[i].length - 1]));
+        array2.push(parseInt(arr1[i + 1][0]));
+    }
+    for (let i = 0; i < array1.length; i++) {
+        arr3.push(array1[i] + array2[i])
+    }
+    arr3 = arr3.reduce((a, b) => a * b);
+    return arr3;
+}
+// arr.push(arr1[i] + arr2[i + 1])
+
+console.log(tailAndHead1([123, 456, 789, 12, 34, 56, 78]));                    //   532350);
+console.log(tailAndHead1([35456, 782, 569, 2454, 875]));                       //   12012);
+console.log(tailAndHead1([1, 2, 3, 4, 5]));                                    //   945);
+console.log(tailAndHead1([111, 2345, 66, 78, 900]));                           //  7293);

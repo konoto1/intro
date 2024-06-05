@@ -1983,3 +1983,54 @@ function countGrade(scores) {
 console.log(countGrade([50, 60, 70, 80, 90, 100]));                //  { S: 1, A: 1, B: 1, C: 2, D: 1, X: 0 });
 console.log(countGrade([65, 75, , 85, 85, 95, 100, 100]));         //  { S: 2, A: 1, B: 2, C: 2, D: 0, X: 0 });
 console.log(countGrade([-1, -1, -1, -1, -1, -1]));                 //  { S: 0, A: 0, B: 0, C: 0, D: 0, X: 6 });
+
+console.clear();
+console.log('---------Training JS #26: methods of arrayObject---map()-------------');
+
+function isolateIt(arr) {
+    const newArr = arr.map(a => ('' + a).slice(0, Math.floor(a.length / 2)));
+    const newArr1 = arr.map(a => a.length % 2 === 0 ? ('' + a).slice(Math.floor(a.length / 2)) : ('' + a).slice(Math.ceil(a.length / 2)));
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        result.push(newArr[i] + '|' + newArr1[i]);
+    }
+    return result;
+}
+
+
+console.log(isolateIt(["abcd", "efgh"]));       // ["ab|cd", "ef|gh"]);
+console.log(isolateIt(["abcde", "fghij"]));     // ["ab|de", "fg|ij"]);
+console.log(isolateIt(["1234", "56789"]));      // ["12|34", "56|89"]);
+
+function isolateIt1(arr) {
+    return arr.map(s => s.slice(0, s.length / 2) + "|" + s.slice(-s.length / 2));
+}
+
+console.log(isolateIt1(["abcd", "efgh"]));       // ["ab|cd", "ef|gh"]);
+console.log(isolateIt1(["abcde", "fghij"]));     // ["ab|de", "fg|ij"]);
+console.log(isolateIt1(["1234", "56789"]));      // ["12|34", "56|89"]);
+
+console.clear();
+console.log('--------Training JS #28: methods of arrayObject---every() and some()------------');
+
+function mirrorImage(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === parseInt(('' + arr[i + 1]).split('').reverse().join(''))) {
+            newArr.push(arr[i]);
+            newArr.push(arr[i + 1]);
+            break;
+        }
+    }
+    if (newArr.length === 0) {
+        return [-1, -1];
+    }
+    return newArr;
+}
+
+console.log(mirrorImage([11, 22, 33, 33, 22, 11]));         // [33, 33]);
+console.log(mirrorImage([454, 86, 57, 75, 16, 88]));            // [57, 75]);
+console.log(mirrorImage([454, 0, 57, 0, 16, 88]));          // [-1, -1]);
+
+
+

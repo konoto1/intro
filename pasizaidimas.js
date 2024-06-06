@@ -2033,4 +2033,34 @@ console.log(mirrorImage([454, 86, 57, 75, 16, 88]));            // [57, 75]);
 console.log(mirrorImage([454, 0, 57, 0, 16, 88]));          // [-1, -1]);
 
 
+console.clear();
+console.log('-------------Sort My Textbooks-----------');
+
+function sorter(textbooks) {
+    const result = textbooks.sort((a2, b2) => {
+        const txtA = a2.toUpperCase(); // ignore upper and lowercase
+        const txtB = b2.toUpperCase(); // ignore upper and lowercase
+        if (txtA < txtB) {
+            return -1;
+        }
+        if (txtA > txtB) {
+            return 1;
+        }
+        // names must be equal
+        return 0;
+    })
+    return result;
+}
+
+
+console.log(sorter(['Algebra', 'History', 'Geometry', 'English']));
+// ['Algebra', 'English', 'Geometry', 'History']);
+
+
+console.log(sorter(['Algebra', 'history', 'Geometry', 'english']));
+// ['Algebra', 'english', 'Geometry', 'history']);
+
+
+console.log(sorter(['Alg#bra', '$istory', 'Geom^try', '**english']));
+// ['$istory', '**english', 'Alg#bra', 'Geom^try']);
 

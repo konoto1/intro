@@ -2086,7 +2086,6 @@ function solution(digits) {
 
 
 
-
 // console.log(solution("731671761531330624919225196742657474235534919493496983520368542506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753123457977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257540920752963450"));
 console.log(solution('6248909014293157374325734426843353037'));
 
@@ -2111,3 +2110,56 @@ function myLanguages(results) {
 
 console.log(myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 }));
 console.log(myLanguages({ "Greek": 71, "Hindi": 60, "Dutch": 93 }));
+
+
+
+console.clear();
+console.log('---------Sum without highest and lowest number----------');
+
+
+function sumArray(array) {
+    if (Array.isArray(array) === false || array.length <= 1) {
+        return 0;
+    }
+    let sum = 0;
+    let max = array[0];
+    let min = array[0];
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+        if (array[i] > max) {
+            max = array[i];
+        }
+        if (array[i] < min) {
+            min = array[i];
+        }
+    }
+    console.log(min, max);
+    return sum - max - min;
+}
+
+console.log(sumArray(null));                             //    0);
+console.log(sumArray([]));                               //    0);
+console.log(sumArray([3]));                              //    0);
+console.log(sumArray([3, 5]));                           //    0);
+console.log(sumArray([6, 2, 1, 8, 10]));                 //    16);
+console.log(sumArray([0, 1, 6, 10, 10]));                //    17);
+console.log(sumArray([-6, -20, -1, -10, -12]));          //   -28);
+console.log(sumArray([-6, 20, -1, 10, -12]));            //    3);
+
+
+console.clear();
+console.log('----------Count of positives / sum of negatives-----------');
+
+
+function countPositivesSumNegatives(input) {
+    if (input === null || input.length === 0) {
+        return [];
+    }
+    let neg = [];
+    let pos = 0;
+    const sort = (input.map((a) => a > 0 ? pos++ : neg.push(a)));
+    const negSum = neg.reduce((a, b) => a + b);
+    return [pos, negSum];
+}
+
+console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));

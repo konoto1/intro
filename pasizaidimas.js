@@ -2163,3 +2163,21 @@ function countPositivesSumNegatives(input) {
 }
 
 console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
+
+
+console.clear();
+console.log('----------Grasshopper - Terminal game combat function---------');
+
+
+function combat(health, damage) {
+    const life = health - damage;
+    if (life <= 0) {
+        return 0;
+    } else {
+        return life;
+    }
+}
+
+console.log(combat(100, 5));            //         , 95);
+console.log(combat(92, 8));             //          , 84);
+console.log(combat(20, 30));            //         , 0, "Health cannot go below 0");

@@ -2181,3 +2181,30 @@ function combat(health, damage) {
 console.log(combat(100, 5));            //         , 95);
 console.log(combat(92, 8));             //          , 84);
 console.log(combat(20, 30));            //         , 0, "Health cannot go below 0");
+
+
+console.clear();
+console.log('-------Merging sorted integer arrays (without duplicates)------------');
+
+
+
+function mergeArrays(a, b) {
+    let arr = [];
+    for (let i = 0; i < b.length; i++) {
+        if (a.includes(b[i]) === false) {
+            a.push(b[i]);
+        }
+    }
+    const array = a.sort((n, m) => n - m);
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] !== array[i + 1]) {
+            arr.push(array[i]);
+        }
+    }
+    return arr;
+}
+
+console.log(mergeArrays([1, 1, 3, 5], [2, 4, 6]));         // [1, 2, 3, 4, 5, 6]);
+console.log(mergeArrays([2, 4, 8], [2, 4, 6]));         // [2, 4, 6, 8]);
+
+

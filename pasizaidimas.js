@@ -2207,4 +2207,90 @@ function mergeArrays(a, b) {
 console.log(mergeArrays([1, 1, 3, 5], [2, 4, 6]));         // [1, 2, 3, 4, 5, 6]);
 console.log(mergeArrays([2, 4, 8], [2, 4, 6]));         // [2, 4, 6, 8]);
 
+console.clear();
 
+function remove(string) {
+    let s = string;
+    for (let i = string.length - 1; i > -1; i--) {
+        if (string[i] === '!') {
+            s = s.slice(0, s.length - 1);
+        } else {
+            break;
+        }
+    }
+    return s;
+}
+
+console.log(remove('!!!Hi!!!'));
+console.log('labasrytas'.replace('labasrytas'[8], ''));
+
+
+console.clear();
+console.log('-----------Evil or Odious-------');
+
+function evil(n) {
+    const dec = n.toString(2);
+    let sum = 0;
+    for (let i = 0; i < dec.length; i++) {
+        if (dec[i] === '1') {
+            sum++;
+        }
+    }
+    if (sum % 2 === 0) {
+        return `It's Evil!`;
+    } else {
+        return `It's Odious!`;
+    }
+}
+
+console.log(evil(1));      /// "It's Odious!");
+console.log(evil(2));      /// "It's Odious!");
+console.log(evil(3));      /// "It's Evil!");
+console.log(evil(20));      /// "It's Evil!");
+
+
+console.clear();
+console.log('----------Check same case---------');
+
+
+function sameCase(a, b) {
+    const abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    if (abc.includes(a.toUpperCase()) && abc.includes(b.toUpperCase()) && a.toUpperCase() === a && b.toUpperCase() === b) {
+        return 1;
+    } else if (abc.includes(a.toUpperCase()) && abc.includes(b.toUpperCase()) && a.toLowerCase() === a && b.toLowerCase() === b) {
+        return 1;
+    } else if (abc.includes(a.toUpperCase()) && abc.includes(b.toUpperCase())) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+console.log(sameCase('C', 'B'));         // 1);
+console.log(sameCase('b', 'a'));         // 1);
+console.log(sameCase('d', 'd'));         // 1);
+console.log(sameCase('A', 's'));         // 0);
+console.log(sameCase('c', 'B'));         // 0);
+console.log(sameCase('b', 'Z'));         // 0);
+console.log(sameCase('\t', 'Z'));        // -1);
+console.log(sameCase('H', ':'));         // -1);
+
+console.clear();
+console.log('-----------Hello, Name or World!----------');
+
+
+function hello(name) {
+    this.name = name;
+    if (this.name === undefined) {
+        return 'Hello, World!';
+    }
+    if (name.length === 0) {
+        return 'Hello, World!';
+    }
+    const txt = name[0].toUpperCase();
+    return 'Hello, ' + `${txt}${(name.toLowerCase()).slice(1)}!`;
+}
+
+console.log(hello('jOhN'));
+console.log(hello(''));
+console.log(hello());

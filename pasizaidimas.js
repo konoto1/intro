@@ -2294,3 +2294,44 @@ function hello(name) {
 console.log(hello('jOhN'));
 console.log(hello(''));
 console.log(hello());
+
+console.clear();
+console.log('------------Sum of differences in array-------');
+
+
+function sumOfDifferences(arr) {
+    const newArr = arr.sort((a, b) => b - a);
+    let array = [];
+    for (let i = 0; i < newArr.length - 1; i++) {
+        array.push(newArr[i] - newArr[i + 1]);
+    }
+    console.log(newArr);
+    return array.reduce((a, b) => a + b);
+}
+
+
+console.log(sumOfDifferences([1, 2, 10]));
+console.log(sumOfDifferences([-3, -2, -1]));
+
+console.clear();
+console.log('----------Stringy Strings----------');
+
+function stringy(size) {
+    if (typeof (size) !== 'number' || '' + size === 'NaN' || size === Infinity || size === -Infinity) {
+        return 'Wrong input';
+    }
+    // const s = parseInt(size);
+    let result = '';
+    for (let i = 0; i < size; i++) {
+        if (i % 2 === 0) {
+            result += 1;
+        } else {
+            result += 0;
+        }
+    }
+    return result;
+}
+
+console.log(stringy(3)[0]);
+console.log(stringy(3));
+

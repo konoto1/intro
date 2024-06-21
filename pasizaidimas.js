@@ -2335,3 +2335,14 @@ function stringy(size) {
 console.log(stringy(3)[0]);
 console.log(stringy(3));
 
+console.clear();
+console.log('-----Genetic Algorithm Series - #3 Crossover---------');
+
+
+const crossover = (chromosome1, chromosome2, index) => {
+    const cros1 = chromosome1.slice(0, index) + chromosome2.slice(index);
+    const cros2 = chromosome2.slice(0, index) + chromosome1.slice(index);
+    return [cros1, cros2];
+}
+
+console.log(crossover('110', '001', 2));

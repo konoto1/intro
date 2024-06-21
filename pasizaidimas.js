@@ -2346,3 +2346,34 @@ const crossover = (chromosome1, chromosome2, index) => {
 }
 
 console.log(crossover('110', '001', 2));
+
+
+console.clear();
+console.log('-------noobCode 03: CHECK THESE LETTERS... see if letters in "String 2" are present in "String 1"------');
+
+
+function letterCheck(arr) {
+    let array = [true, true];
+    for (let i = 0; i < arr[1].length; i++) {
+        if (arr[0].toLowerCase().includes(arr[1].toLowerCase()[i])) {
+            array[0] = true;
+        } else {
+            array[1] = false;
+        }
+    }
+    return array[0] && array[1];
+}
+
+
+console.log(letterCheck(["trances", "nectar"]));                      //true)
+console.log(letterCheck(["THE EYES", "they see"]));                   //true)
+console.log(letterCheck(["assert", "staring"]));                      //false)
+console.log(letterCheck(["arches", "later"]));                        //false)
+console.log(letterCheck(["dale", "caller"]));                         //false)
+console.log(letterCheck(["parses", "parsecs"]));                      //false)
+console.log(letterCheck(["replays", "adam"]));                        //false)
+console.log(letterCheck(["mastering", "streaming"]));                 //true)
+console.log(letterCheck(["drapes", "compadres"]));                    //false)
+console.log(letterCheck(["deltas", "slated"]));                       //true)
+
+

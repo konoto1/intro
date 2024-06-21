@@ -2377,3 +2377,66 @@ console.log(letterCheck(["drapes", "compadres"]));                    //false)
 console.log(letterCheck(["deltas", "slated"]));                       //true)
 
 
+console.clear();
+console.log('--------compute cube as sums------');
+
+
+
+function findSummands(n) {
+    let num = 0;
+    let arr = [];
+    if (n === 1) {
+        return [n];
+    }
+    if (n % 2 === 0) {
+        num = n ** 3 / n - 1 - (n / 2 - 1) * 2;
+    } else {
+        num = n ** 3 / n - (n - 1);
+    }
+    arr.push(num);
+    for (let i = 1; i < n; i++) {
+        arr.push(num += 2);
+    }
+    return arr;
+}
+
+
+console.log(findSummands(8));
+
+
+console.clear();
+console.log('-------------String incrementer--------');
+
+
+function incrementString(strng) {
+    let arr = [];
+    let arr1 = [];
+    if ('' + parseInt(strng[strng.length - 1]) === 'NaN') {
+        return strng + 1;
+    }
+    for (let i = strng.length - 1; i > -1; i--) {
+        if (('' + parseInt(strng[i])) !== 'NaN') {
+            arr.unshift(parseInt(strng[i]))
+        } else {
+            break;
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== 0) {
+            arr1 = [...arr.splice(i)];
+        }
+    }
+    let start = strng.slice(0, strng.length - arr1.length);
+    let end = parseInt(('' + arr1).replaceAll(',', '')) + 1;
+    if (arr1.length === 0) {
+        end = 1;
+    }
+    if (('' + end).length > ('' + arr1).replaceAll(',', '').length && arr[0] === 0) {
+        start = strng.slice(0, strng.length - arr1.length - 1);
+    }
+    return start + end;
+}
+
+
+console.log(incrementString('foobar0'));
+console.log(incrementString('foob99ar09999'));

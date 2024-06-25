@@ -2440,3 +2440,56 @@ function incrementString(strng) {
 
 console.log(incrementString('foobar0'));
 console.log(incrementString('foob99ar09999'));
+
+
+console.clear();
+console.log('-----------The Hashtag Generator-------------');
+
+
+function generateHashtag(str) {
+    const txt = str.trim();
+    if (txt.length === 0) {
+        return false;
+    }
+    const arr = txt.split(' ').filter((a) => a !== '').map((a => a[0] === a[0].toUpperCase() ? a = a : a = a[0].toUpperCase() + a.slice(1)));
+    const result = arr.join('');
+    if (result[0] === '#' && result.length > 140) {
+        return false;
+    } else if (result[0] === '#' && result.length <= 140) {
+        return result;
+    } else if (result.length <= 139) {
+        return '#' + result;
+    } else {
+        return false;
+    }
+}
+
+console.log(generateHashtag('Codewars Is Nice'));
+console.log(generateHashtag('Codewars is nice'));
+console.log(generateHashtag("code" + " ".repeat(140) + "wars"));
+console.log(generateHashtag("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"));
+
+
+console.clear();
+console.log('-----------Directions Reduction------');
+
+function dirReduc(arr) {
+    let str = arr.join(',');
+    for (let i = 0; i < arr.length; i++) {
+        str = str.replaceAll('NORTH,SOUTH', '').replaceAll('SOUTH,NORTH', '').replaceAll('EAST,WEST', '').replaceAll('WEST,EAST', '');
+    }
+    // const arr1 = str.split('WEST')
+    // const arr2 = str.split('SOUTH')
+    // const arr3 = str.split('EAST')
+    // const arr4 = str.split('NORTH')
+    // console.log(arr1);
+    // console.log(arr2);
+    // console.log(arr3);
+    // console.log(arr4);
+    // const arr2 = result.split('W')
+    return str;
+}
+
+
+console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]));
+console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));

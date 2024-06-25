@@ -2476,20 +2476,29 @@ console.log('-----------Directions Reduction------');
 function dirReduc(arr) {
     let str = arr.join(',');
     for (let i = 0; i < arr.length; i++) {
-        str = str.replaceAll('NORTH,SOUTH', '').replaceAll('SOUTH,NORTH', '').replaceAll('EAST,WEST', '').replaceAll('WEST,EAST', '');
+        str = str.replaceAll('NORTH,SOUTH', '').replaceAll('SOUTH,NORTH', '').replaceAll('EAST,WEST', '').replaceAll('WEST,EAST', '').replaceAll(',,', ',');
     }
-    // const arr1 = str.split('WEST')
-    // const arr2 = str.split('SOUTH')
-    // const arr3 = str.split('EAST')
-    // const arr4 = str.split('NORTH')
-    // console.log(arr1);
-    // console.log(arr2);
-    // console.log(arr3);
-    // console.log(arr4);
-    // const arr2 = result.split('W')
+    str = str.split(',').filter(a => a !== '');
     return str;
 }
 
 
 console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]));
 console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+
+console.clear();
+console.log('--------First None Consecutive number-----------');
+
+
+function firstNonConsecutive(arr) {
+    let result = null;
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + 1 !== arr[i + 1]) {
+            result = arr[i + 1];
+            break;
+        }
+    }
+    return result;
+}
+
+console.log(firstNonConsecutive([-2, -1, 0, 2, 3, 6, 7]));

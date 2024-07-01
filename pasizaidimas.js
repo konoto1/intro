@@ -2502,3 +2502,89 @@ function firstNonConsecutive(arr) {
 }
 
 console.log(firstNonConsecutive([-2, -1, 0, 2, 3, 6, 7]));
+
+console.clear();
+console.log("--------Divide numbers as strings------------");
+
+
+function largeDiv(a, b) {
+    if (parseFloat(b) === 0) {
+        throw "error";
+    }
+    const calc1 = (parseFloat(a) / parseFloat(b));
+    if (('' + calc1).length < 17) {
+        return '' + calc1;
+    }
+    return calc1.toFixed(18);
+}
+
+console.log(largeDiv('22', '7'));
+console.log(largeDiv('6', '2'));
+console.log(largeDiv('5', '2'));
+console.log(largeDiv('13.25', '0.53'));
+console.log(largeDiv('1', '3'));
+
+
+console.clear();
+console.log('----------Remove First and Last Character Part Two-------');
+
+
+function array(string) {
+    let arr = string.split(',');
+    if (arr.length < 3) {
+        return null
+    } else {
+        arr = arr.slice(1, arr.length - 1)
+    }
+    return arr.join(' ');
+}
+
+//nebaigtas sprendimas
+
+
+console.log(array(''));                       //  null);
+console.log(array('1'));                      //  null);
+console.log(array('A1,B2'));                  //  null);
+console.log(array('1,2,3'));                  //  '2');
+console.log(array('1,2,3,4'));                //  '2 3');
+console.log(array('A1,B2,C3,D4,E5'));         //  'B2 C3 D4');
+console.log(array('A,1,23,456,78,9,Z'));      //  '1 23 456 78 9')
+
+console.clear();
+console.log('--------Greed is Good----------');
+
+function score(dice) {
+    const score = ['X', 1000, 200, 300, 400, 500, 600];
+    const arr = ['X'];
+    let index = null;
+    arr.push((dice.filter((a) => a === 1)).length);
+    arr.push((dice.filter((a) => a === 2)).length);
+    arr.push((dice.filter((a) => a === 3)).length);
+    arr.push((dice.filter((a) => a === 4)).length);
+    arr.push((dice.filter((a) => a === 5)).length);
+    arr.push((dice.filter((a) => a === 6)).length);
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 3) {
+            index = i;
+        }
+    }
+    if (index !== null) {
+        arr[index] = arr[index] - 3;
+        const sum = score[index] + arr[1] * 100 + arr[5] * 50;
+        return sum;
+    } else {
+        return arr[1] * 100 + arr[5] * 50;
+    }
+}
+
+
+
+console.log(score([2, 3, 4, 6, 2]));   // 0, "Incorrect answer for dice = [2, 3, 4, 6, 2]");
+
+
+
+console.log(score([4, 4, 4, 3, 3]));   // 400, "Incorrect answer for dice = [4, 4, 4, 3, 3]");
+
+
+
+console.log(score([2, 4, 4, 5, 4]));   // 450, "Incorrect answer for dice = [2, 4, 4, 5, 4]");

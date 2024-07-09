@@ -2503,27 +2503,6 @@ function firstNonConsecutive(arr) {
 
 console.log(firstNonConsecutive([-2, -1, 0, 2, 3, 6, 7]));
 
-console.clear();
-console.log("--------Divide numbers as strings------------");
-
-
-function largeDiv(a, b) {
-    if (parseFloat(b) === 0) {
-        throw "error";
-    }
-    const calc1 = (parseFloat(a) / parseFloat(b));
-    if (('' + calc1).length < 17) {
-        return '' + calc1;
-    }
-    return calc1.toFixed(18);
-}
-
-console.log(largeDiv('22', '7'));
-console.log(largeDiv('6', '2'));
-console.log(largeDiv('5', '2'));
-console.log(largeDiv('13.25', '0.53'));
-console.log(largeDiv('1', '3'));
-
 
 console.clear();
 console.log('----------Remove First and Last Character Part Two-------');
@@ -2578,13 +2557,101 @@ function score(dice) {
 }
 
 
-
 console.log(score([2, 3, 4, 6, 2]));   // 0, "Incorrect answer for dice = [2, 3, 4, 6, 2]");
-
-
-
 console.log(score([4, 4, 4, 3, 3]));   // 400, "Incorrect answer for dice = [4, 4, 4, 3, 3]");
-
-
-
 console.log(score([2, 4, 4, 5, 4]));   // 450, "Incorrect answer for dice = [2, 4, 4, 5, 4]");
+
+
+console.clear();
+console.log("--------Divide numbers as strings------------");
+
+
+// function largeDiv(a, b) {
+//     if (parseFloat(b) === 0) {
+//         throw "error";
+//     }
+//     let left = parseFloat(a) % parseFloat(b);
+//     const div = (parseFloat(a) / parseFloat(b));
+//     if (!('' + div).includes('.')) {
+//         return '' + div;
+//     }
+//     const int = `${Math.floor(div)}.`
+//     let dec = '';
+//     if (b.includes('.')) {
+//         const mult = b.split('.')[1].length;
+//         const aA = a * 10 ** mult;
+//         const bB = b * 10 ** mult;
+//         let left = parseFloat(aA) % parseFloat(bB);
+//         for (let i = 0; i < 20; i++) {
+//             dec += '' + Math.floor(left * 10 / parseFloat(bB));
+//             left = (left * 10 % parseFloat(bB));
+//             if (left === 0) {
+//                 break;
+//             }
+//         }
+//         return int + dec;
+//     } if (!b.includes('.')) {
+//         for (let i = 0; i < 20; i++) {
+//             dec += '' + Math.floor(left * 10 / parseFloat(b));
+//             left = (left * 10 % parseFloat(b));
+//             if (left === 0) {
+//                 break;
+//             }
+//         }
+//     }
+//     const result = int + dec;
+//     if ('' + parseFloat(result) === '0') {
+//         return '0';
+//     }
+//     return result;
+// }
+
+// console.log(largeDiv('22', '7'));
+// console.log(largeDiv('6', '2'));
+// console.log(largeDiv('5', '2'));
+// console.log(largeDiv('13.25', '0.53'));
+// console.log(largeDiv('1', '3'));
+// console.log(largeDiv('1', '10000000000000000000000000'));
+// console.log(largeDiv('0.5', '0.866025403'));
+// console.log(largeDiv('885363224785076535083983', '5473')); //1617692718408690910074882183686867680070587259670446886418005037729665557035817899211928696751833.3307144162251050612
+
+
+console.clear();
+console.log('-----------Arguments to Binary addition----------');
+
+
+function arr2bin(arr) {
+    const numArr = arr.filter(a => typeof a === 'number');
+    if (numArr.length === 0) {
+        return '0';
+    } else {
+        const sum = numArr.reduce((a, b) => a + b);
+        return sum.toString(2);
+    }
+}
+
+
+console.log(arr2bin([1, 2]));                    // "11")
+console.log(arr2bin([1, 2, 3, 4, 5]));           // "1111")
+console.log(arr2bin([1, 10, 100, 1000]));        // "10001010111")
+console.log(arr2bin([null]));                    // "0")
+console.log(arr2bin([true, true, false, 15]));   // "1111")
+
+console.clear();
+console.log('-------------Sort with a sorting array-------------');
+
+function sort(initialArray, sortingArray) {
+    const arr = [];
+    for (let i = 0; i < initialArray.length; i++) {
+        arr[sortingArray[i]] = initialArray[i];
+    }
+    return arr;
+}
+
+console.log(sort(['x', 'y', 'z'], [1, 2, 0]));                                               // ["z", "x", "y"], "For initialArray = ['x', 'y', 'z'], sortingArray = [1, 2, 0]");
+console.log(sort(['x', 'y', 'z'], [0, 1, 2]));                                               // ['x', 'y', 'z'], "For initialArray = ['x', 'y', 'z'], sortingArray = [0, 1, 2]");
+console.log(sort([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]));                                         // [1, 2, 3, 4, 5], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 1, 2, 3, 4]");
+console.log(sort([1, 2, 3, 4, 5], [0, 2, 1, 4, 3]));                                         // [1, 3, 2, 5, 4], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 2, 1, 4, 3]");
+console.log(sort(['o', 78, 26, 16, 75, 57, 'g'], [1, 5, 2, 3, 0, 6, 4]));                    // [ 75, 'o', 26, 16, 'g', 78, 57 ], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 2, 1, 4, 3]");
+
+

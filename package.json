@@ -4,6 +4,7 @@
   "description": "Tomas tomas",
   "main": "index.js",
   "scripts": {
+    "default": "node --watch ./js/funkcijos/default.js",
     "new-methods": "node --watch ./js/qa/new-methods.js",
     "method:array2": "node --watch ./js/metodai/array2.js",
     "for_other": "node --watch ./js/ciklai/for_other.js",

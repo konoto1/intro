@@ -2563,7 +2563,46 @@ console.log(score([2, 4, 4, 5, 4]));   // 450, "Incorrect answer for dice = [2, 
 
 
 console.clear();
-console.log("--------Divide numbers as strings------------");
+console.log('-----------Arguments to Binary addition----------');
+
+
+function arr2bin(arr) {
+    const numArr = arr.filter(a => typeof a === 'number');
+    if (numArr.length === 0) {
+        return '0';
+    } else {
+        const sum = numArr.reduce((a, b) => a + b);
+        return sum.toString(2);
+    }
+}
+
+
+console.log(arr2bin([1, 2]));                    // "11")
+console.log(arr2bin([1, 2, 3, 4, 5]));           // "1111")
+console.log(arr2bin([1, 10, 100, 1000]));        // "10001010111")
+console.log(arr2bin([null]));                    // "0")
+console.log(arr2bin([true, true, false, 15]));   // "1111")
+
+console.clear();
+console.log('-------------Sort with a sorting array-------------');
+
+function sort(initialArray, sortingArray) {
+    const arr = [];
+    for (let i = 0; i < initialArray.length; i++) {
+        arr[sortingArray[i]] = initialArray[i];
+    }
+    return arr;
+}
+
+console.log(sort(['x', 'y', 'z'], [1, 2, 0]));                                               // ["z", "x", "y"], "For initialArray = ['x', 'y', 'z'], sortingArray = [1, 2, 0]");
+console.log(sort(['x', 'y', 'z'], [0, 1, 2]));                                               // ['x', 'y', 'z'], "For initialArray = ['x', 'y', 'z'], sortingArray = [0, 1, 2]");
+console.log(sort([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]));                                         // [1, 2, 3, 4, 5], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 1, 2, 3, 4]");
+console.log(sort([1, 2, 3, 4, 5], [0, 2, 1, 4, 3]));                                         // [1, 3, 2, 5, 4], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 2, 1, 4, 3]");
+console.log(sort(['o', 78, 26, 16, 75, 57, 'g'], [1, 5, 2, 3, 0, 6, 4]));                    // [ 75, 'o', 26, 16, 'g', 78, 57 ], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 2, 1, 4, 3]");
+
+
+// console.clear();
+// console.log("--------Divide numbers as strings------------");
 
 
 // function largeDiv(a, b) {
@@ -2603,6 +2642,9 @@ console.log("--------Divide numbers as strings------------");
 //     if ('' + parseFloat(result) === '0') {
 //         return '0';
 //     }
+//     if (result.includes('.') && result.endsWith('0')) {
+//         return result.slice(0, result.length - 1);
+//     }
 //     return result;
 // }
 
@@ -2613,45 +2655,27 @@ console.log("--------Divide numbers as strings------------");
 // console.log(largeDiv('1', '3'));
 // console.log(largeDiv('1', '10000000000000000000000000'));
 // console.log(largeDiv('0.5', '0.866025403'));
-// console.log(largeDiv('885363224785076535083983', '5473')); //1617692718408690910074882183686867680070587259670446886418005037729665557035817899211928696751833.3307144162251050612
-
+// console.log(largeDiv('6660526719100041897189702679189480466766', '888911074136762437942547110188')); //7492905548.02481161031029346327
 
 console.clear();
-console.log('-----------Arguments to Binary addition----------');
+console.log('-------------Simple decrypt algo-------------');
 
-
-function arr2bin(arr) {
-    const numArr = arr.filter(a => typeof a === 'number');
-    if (numArr.length === 0) {
-        return '0';
-    } else {
-        const sum = numArr.reduce((a, b) => a + b);
-        return sum.toString(2);
+function decrypt(encryption) {
+    const text = [...encryption];
+    const abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    let result = '';
+    for (let i = 0; i < abc.length; i++) {
+        let len = text.filter(a => a === abc[i]);
+        result += '' + len.length;
     }
+    return result;
 }
 
 
-console.log(arr2bin([1, 2]));                    // "11")
-console.log(arr2bin([1, 2, 3, 4, 5]));           // "1111")
-console.log(arr2bin([1, 10, 100, 1000]));        // "10001010111")
-console.log(arr2bin([null]));                    // "0")
-console.log(arr2bin([true, true, false, 15]));   // "1111")
+console.log(decrypt('$aaaa#bbb*ccfff!z'));
 
-console.clear();
-console.log('-------------Sort with a sorting array-------------');
 
-function sort(initialArray, sortingArray) {
-    const arr = [];
-    for (let i = 0; i < initialArray.length; i++) {
-        arr[sortingArray[i]] = initialArray[i];
-    }
-    return arr;
-}
 
-console.log(sort(['x', 'y', 'z'], [1, 2, 0]));                                               // ["z", "x", "y"], "For initialArray = ['x', 'y', 'z'], sortingArray = [1, 2, 0]");
-console.log(sort(['x', 'y', 'z'], [0, 1, 2]));                                               // ['x', 'y', 'z'], "For initialArray = ['x', 'y', 'z'], sortingArray = [0, 1, 2]");
-console.log(sort([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]));                                         // [1, 2, 3, 4, 5], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 1, 2, 3, 4]");
-console.log(sort([1, 2, 3, 4, 5], [0, 2, 1, 4, 3]));                                         // [1, 3, 2, 5, 4], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 2, 1, 4, 3]");
-console.log(sort(['o', 78, 26, 16, 75, 57, 'g'], [1, 5, 2, 3, 0, 6, 4]));                    // [ 75, 'o', 26, 16, 'g', 78, 57 ], "For initialArray = [1, 2, 3, 4, 5], sortingArray = [0, 2, 1, 4, 3]");
+
 
 

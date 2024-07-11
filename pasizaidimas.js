@@ -2671,11 +2671,21 @@ function decrypt(encryption) {
     return result;
 }
 
-
 console.log(decrypt('$aaaa#bbb*ccfff!z'));
 
+console.clear();
+console.log('-------Only Duplicates-------');
+
+function onlyDuplicates(str) {
+    let result = str;
+    const arr = str.split('');
+    for (let i = 0; i < str.length; i++) {
+        if ((arr.filter(a => a === arr[i])).length === 1) {
+            result = result.replaceAll(arr[i], '')
+        }
+    }
+    return result;
+}
 
 
-
-
-
+console.log(onlyDuplicates('abccdefee'));

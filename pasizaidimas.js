@@ -2647,7 +2647,6 @@ console.log(sort(['o', 78, 26, 16, 75, 57, 'g'], [1, 5, 2, 3, 0, 6, 4]));       
 //     }
 //     return result;
 // }
-
 // console.log(largeDiv('22', '7'));
 // console.log(largeDiv('6', '2'));
 // console.log(largeDiv('5', '2'));
@@ -2689,3 +2688,100 @@ function onlyDuplicates(str) {
 
 
 console.log(onlyDuplicates('abccdefee'));
+
+
+console.clear();
+
+function testit(s) {
+    let sArr = s.split(' ');
+    const text2 = 'abcdefghijklmnopqrstuvwxyz';
+    const sS1 = s.replaceAll('?', '').split(' ');
+    let array3 = [];
+    for (let z = 0; z < sS1.length; z++) {
+        const index1 = sS1[z].split('');
+        array3.push([]);
+        for (let i = 0; i < index1.length; i++) {
+            for (let l = 0; l < text2.length; l++) {
+                if (index1[i] === text2[l]) {
+                    array3[z][i] = l;
+                }
+            }
+        }
+    }
+    const sumArray3 = [];
+    for (let k = 0; k < array3.length; k++) {
+        sumArray3.push(array3[k].reduce((a1, b1) => a1 + b1, 0));
+    }
+    for (let p = 0; p < sArr.length; p++) {
+        const sIndex = Math.floor(sumArray3[p] / (sArr[p].length - 1));
+        sArr[p] = sArr[p].replace('?', text2[sIndex]);
+    }
+    console.log(sumArray3);
+    return sArr.join(' ');
+}
+
+console.log(testit('y?u d?g')); //ywu deg
+console.log(testit('hsfcr?i wspnfs?eu ?ozjrflxp b?i ?ly yrxwpsi?a naa?isx')); //hsfcrii wspnfsneu oozjrflxp bei rly yrxwpsija naakisx
+console.log(testit('co?ewars')); //cokewars
+console.log(testit('efz?kvki jp?a ?tq')); //efzlkvki jpga rtq
+
+console.clear();
+console.log('---------Simple Fun #97: Video Part---------------');
+
+
+function videoPart(part, total) {
+    const partArr = part.split(':');
+    const totalArr = total.split(':');
+    const partSec = parseInt(partArr[0]) * 3600 + parseInt(partArr[1]) * 60 + parseInt(partArr[2]);
+    const totalSec = parseInt(totalArr[0]) * 3600 + parseInt(totalArr[1]) * 60 + parseInt(totalArr[2]);
+    let result = [1, totalSec / partSec];
+    if ((totalSec / partSec) % 1 !== 0) {
+        for (let i = 1; i < Infinity; i++) {
+            if ((totalSec / partSec) * i % 1 === 0) {
+                result = [1 * i, (totalSec / partSec) * i];
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+console.log(videoPart("02:20:00", "07:00:00"));     // [1, 3])
+
+console.log(videoPart("25:26:20", "25:26:20"));     // [1, 1])
+
+console.log(videoPart("00:02:20", "00:10:00"));     // [7, 30])
+
+console.log(videoPart("00:44:10", "03:34:16"));     // [1325, 6428])
+
+
+console.clear();
+console.log('------Clothes size number converter------------');
+
+
+function sizeToNumber(size) {
+    if (!size.endsWith('m') && !size.endsWith('l') && !size.endsWith('s')) {
+        return null;
+    }
+    if (size === 'm') {
+        return 38;
+    }
+    let sum = 0;
+    for (let i = 0; i < size.length; i++) {
+        if (size[i] === 'x') {
+            sum++;
+        }
+    }
+    if (sum === size.length - 1 && size.endsWith('l')) {
+        return 40 + sum * 2;
+    }
+    if (sum === size.length - 1 && size.endsWith('s')) {
+        return 36 - sum * 2;
+    } else {
+        return null;
+    }
+}
+
+console.log(sizeToNumber("xxxs"));
+console.log(sizeToNumber("s"));
+

@@ -2796,4 +2796,40 @@ function none(arr, fun) {
 console.log(none([], function (item) { return item > 5 }));                     //true)
 console.log(none([1, 2, 3, 4, 5], function (item) { return item > 4 }));        //false)
 
+console.clear();
+console.log('---------2D Vector Mapping-------------');
 
+
+function mapVector(vector, circle1, circle2) {
+    const scale = circle2[2] / circle1[2];
+    const x = ((circle1[0] - vector[0]) * scale) % 1 !== 0 ? parseFloat(((circle1[0] - vector[0]) * scale).toFixed(2)) : (circle1[0] - vector[0]) * scale;
+    const y = ((circle1[1] - vector[1]) * scale) % 1 !== 0 ? parseFloat(((circle1[1] - vector[1]) * scale).toFixed(2)) : (circle1[1] - vector[1]) * scale;
+    return [circle2[0] - x, circle2[1] - y];
+}
+
+console.log(mapVector([46, 58], [0, 0, 100], [0, 0, 100]));         //[46, 58]
+console.log(mapVector([50, 88], [-25, 128, 100], [50, 50, 100]));   //[125, 10]
+console.log(mapVector([5, 5], [10, 20, 42], [-100, -42, 60]));   //[-107.14, -63.43]
+
+
+console.clear();
+console.log('--------');
+
+function dominator(arr) {
+    let result = -1;
+    for (const num of arr) {
+        if (
+            ((arr.filter((a) => a === num)).length > arr.length / 2)) {
+            result = num;
+            break;
+        }
+    }
+    return result;
+}
+
+console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3]));               // 3);
+console.log(dominator([1, 2, 3, 4, 5]));             // -1);
+console.log(dominator([1, 1, 1, 2, 2, 2]));                // -1);
+console.log(dominator([1, 1, 1, 2, 2, 2, 2]));              // 2);
+
+console.log([3, 3, 3, 1, 5, 6].sort((a, b) => a - b)); 

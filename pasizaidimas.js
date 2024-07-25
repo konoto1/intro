@@ -2785,3 +2785,15 @@ function sizeToNumber(size) {
 console.log(sizeToNumber("xxxs"));
 console.log(sizeToNumber("s"));
 
+console.clear();
+
+console.log('----------Enumerable Magic #4 - True for None ?-------- ');
+
+function none(arr, fun) {
+    return (arr.filter(fun)).length === 0 ? true : false;
+}
+
+console.log(none([], function (item) { return item > 5 }));                     //true)
+console.log(none([1, 2, 3, 4, 5], function (item) { return item > 4 }));        //false)
+
+

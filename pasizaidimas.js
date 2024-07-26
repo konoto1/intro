@@ -2842,3 +2842,37 @@ console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 
 // console.log(dominator([1, 2, 3, 4, 5]));             // -1);
 // console.log(dominator([1, 1, 1, 2, 2, 2]));                // -1);
 // console.log(dominator([1, 1, 1, 2, 2, 2, 2]));              // 2);
+
+console.clear();
+console.log('---------RGB To Hex Conversion--------');
+
+
+function rgb(r, g, b) {
+    if (r < 0) {
+        r = 0;
+    }
+    if (r > 255) {
+        r = 255;
+    }
+    if (g < 0) {
+        g = 0;
+    }
+    if (g > 255) {
+        g = 255;
+    }
+    if (b < 0) {
+        b = 0;
+    }
+    if (b > 255) {
+        b = 255;
+    }
+    const hexR = r.toString(16).padStart(2, 0);
+    const hexG = g.toString(16).padStart(2, 0);
+    const hexB = b.toString(16).padStart(2, 0);
+    return (hexR + hexG + hexB).toUpperCase();
+}
+
+console.log(rgb(255, 255, 255));
+console.log(rgb(255, 255, -20));
+console.log(rgb(219, 28, 191));
+

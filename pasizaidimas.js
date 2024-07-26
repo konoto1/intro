@@ -2816,20 +2816,29 @@ console.clear();
 console.log('--------');
 
 function dominator(arr) {
+    arr.sort((a, b) => a - b);
+    console.log(arr);
     let result = -1;
-    for (const num of arr) {
-        if (
-            ((arr.filter((a) => a === num)).length > arr.length / 2)) {
-            result = num;
-            break;
+    let sum = 0;
+    for (let i = 1; i <= arr.length / 2; i++) {
+        i += sum - 1;
+        sum = 0;
+        console.log(i);
+        for (let z = 0; z < arr.length; z++) {
+            // const index = ;
+            if (arr[i] === arr[z]) {
+                sum++;
+            }
+            if (sum > arr.length / 2) {
+                result = arr[i];
+                break;
+            }
         }
     }
     return result;
 }
 
-console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3]));               // 3);
-console.log(dominator([1, 2, 3, 4, 5]));             // -1);
-console.log(dominator([1, 1, 1, 2, 2, 2]));                // -1);
-console.log(dominator([1, 1, 1, 2, 2, 2, 2]));              // 2);
-
-console.log([3, 3, 3, 1, 5, 6].sort((a, b) => a - b)); 
+console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3, 4, 3, 2, 3, 1, 3, 3]));               // 3);
+// console.log(dominator([1, 2, 3, 4, 5]));             // -1);
+// console.log(dominator([1, 1, 1, 2, 2, 2]));                // -1);
+// console.log(dominator([1, 1, 1, 2, 2, 2, 2]));              // 2);

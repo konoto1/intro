@@ -2876,3 +2876,32 @@ console.log(rgb(255, 255, 255));
 console.log(rgb(255, 255, -20));
 console.log(rgb(219, 28, 191));
 
+console.clear();
+console.log('-------------Reducing by rules to get the result---------');
+
+
+function reduceByRules(numbers, rules) {
+    let arr = [...numbers];
+    let result = 0;
+    if (rules.length === 1) {
+        return arr.reduce(rules[0]);
+    }
+    for (let i = 0; i < rules.length; i++) {
+        result = (arr.splice(0, 2).reduce(rules[i]));
+        arr.unshift(result);
+        if (arr.length > 1 && i === rules.length - 1) {
+            i = -1;
+        }
+        if (arr.length === 1) {
+            break;
+        }
+    }
+    return result;
+}
+
+const rules = [(a, b) => a + b];
+console.log(reduceByRules([2.0, 2.0, 2.0], rules));
+const rules1 = [(a, b) => a + b, (a, b) => a - b, (a, b) => a * b]
+console.log(reduceByRules([2.0, 2.0, 2.0, 2.0, 2.0, 2.0], rules1));
+const rules2 = [(a, b) => a + b, (a, b) => a - b];
+console.log(reduceByRules([2.0, 2.0, 3.0, 4.0], rules2));

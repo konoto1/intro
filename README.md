@@ -5,7 +5,7 @@
 ![Eco Status](https://img.shields.io/badge/ECO-Friendly-green.svg)
 [![Discord](https://discord.com/api/guilds/571393319201144843/widget.png)](https://discord.gg/dRwW4rw)
 
-_website design project_
+_JS educational course_
 
 <br>
 
@@ -17,24 +17,24 @@ This project is for JS educational purposes only.
 ## 🎯 Project features/goals
 
 -  JS main programming topics:
-  -  Data types
-  -  Functions
-  -  Comparison (if)
-  -  Loops
-  -  Classes
-  -  Event listeners
+    -  Data types
+    -  Functions
+    -  Comparison (if)
+    -  Loops
+    -  Classes
+    -  Event listeners
 -  Data types:
-  -  nummbers
-  -  strings
-  -  boolean
-  -  array
-  -  object
-  -  null
-  -  undefined
--  Data initialization methods
-  -  const
-  -  let
-  -  var
+    -  nummbers
+    -  strings
+    -  boolean
+    -  array
+    -  object
+    -  null
+    -  undefined
+-  Data initialization methods:
+    -  const
+    -  let
+    -  var
 
 ### 🧪 Running tests
 

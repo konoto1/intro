@@ -96,3 +96,19 @@ const marks = [10, 2, 8, 4, 6];
 console.log(Math.max(...marks));
 console.log(Math.min(...marks));
 console.log(...marks);
+
+console.clear();
+
+const students = [
+    { name: 'Jonas', age: 99 },
+    { name: 'Maryte', age: 88 },
+    { name: 'Petras', age: 77 },
+    { name: 'Ona', age: 66 },
+    { name: 'Janina', age: 55, married: true },
+]
+
+for (const { name, age, married } of students) {
+    const str = `Mano vardas ${name} ir man ${age} metu ir esu ${married ? 'vedes' : 'nevedes'}`;
+    console.log(str);
+
+}

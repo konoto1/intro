@@ -2905,3 +2905,57 @@ const rules1 = [(a, b) => a + b, (a, b) => a - b, (a, b) => a * b]
 console.log(reduceByRules([2.0, 2.0, 2.0, 2.0, 2.0, 2.0], rules1));
 const rules2 = [(a, b) => a + b, (a, b) => a - b];
 console.log(reduceByRules([2.0, 2.0, 3.0, 4.0], rules2));
+
+console.clear()
+
+console.log('-------Where Are My Glasses?------');
+
+function findGlasses(arr) {
+}
+
+console.log(findGlasses(['floor', 'the floor again', 'pockets', 'bed', 'cabinet', 'the top of my head O-O']));
+console.log(findGlasses(['OOOO----~OOO', '-------', 'OOOOOOO', 'OO-OO-OO-O']));
+
+console.clear();
+console.clear();
+
+function dijkstra(graph, startProduct) {
+    let n = graph.length;
+    let minDistances = new Array(n).fill(Infinity);
+    let visited = new Array(n).fill(false);
+
+    minDistances[startProduct] = 0;
+
+    for (let i = 0; i < n; i++) {
+        let minIndex = -1;
+        for (let j = 0; j < n; j++) {
+            if (!visited[j] && (minIndex === -1 || minDistances[j] < minDistances[minIndex])) {
+                minIndex = j;
+            }
+        }
+        if (minDistances[minIndex] === Infinity) {
+            break;
+        }
+        visited[minIndex] = true;
+
+        for (let j = 0; j < n; j++) {
+            if (graph[minIndex][j] !== 0) {
+                let potentialDist = minDistances[minIndex] + graph[minIndex][j];
+                if (potentialDist < minDistances[j]) {
+                    minDistances[j] = potentialDist;
+                }
+            }
+        }
+    }
+    return minDistances;
+}
+
+const graph = [
+    [0, 2, 0, 1, 0],
+    [2, 0, 3, 0, 0],
+    [0, 3, 0, 4, 0],
+    [1, 0, 4, 0, 5],
+    [0, 0, 0, 5, 0]
+];
+console.log(dijkstra(graph, 0));
+
